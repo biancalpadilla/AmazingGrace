@@ -2584,6 +2584,7 @@ h6,
 .h4 {
   font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 16px
 }
 h5,
 h6 {
@@ -41629,11 +41630,11 @@ legend {
 }
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
-  color: inherit;
+  color: gray;
   background-color: transparent;
 }
 .navbar .navbar-text {
-  color: inherit;
+  color: white;
   margin-top: 20px;
   margin-bottom: 20px;
 }

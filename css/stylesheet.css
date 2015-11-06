@@ -1,0 +1,38 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px
+}
+h5,
+h6 {
+  font-weight: 400;
+}
+
+.navbar .navbar-collapse {
+  float: right;
+  padding-right: 100px;
+}
+
+.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
+    font-size: 20px;
+}
+.navbar .navbar-nav > li > a {
+    font-size: 20px;
+}
+
+.navbar .navbar-brand {
+  /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+  font-family: 'Bitter', serif;
+  font-size: 32px;
+  padding-left: 50px;
+}
