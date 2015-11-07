@@ -1,21 +1,28 @@
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4 {
-  font-family: "RobotoDraft", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 16px
+body .jumbotron-material-purple-900, .container .jumbotron-material-purple-900, .container-fluid .jumbotron-material-purple-900 {
+    background-color: #4a148c;
 }
-h5,
-h6 {
-  font-weight: 400;
+
+body {
+  font-size: 16px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  height: 100px;
+}
+
+.site-footer {
+  background: orange;
+
 }
 
 .navbar .navbar-collapse {
@@ -23,16 +30,19 @@ h6 {
   padding-right: 100px;
 }
 
-.navbar .navbar-nav > .active > a, .navbar .navbar-nav > .active > a:hover, .navbar .navbar-nav > .active > a:focus {
-    font-size: 20px;
+.navbar .navbar-nav > .active > a,
+.navbar .navbar-nav > .active > a:hover,
+.navbar .navbar-nav > .active > a:focus {
+  font-size: 20px;
 }
+
 .navbar .navbar-nav > li > a {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .navbar .navbar-brand {
   /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
   font-family: 'Bitter', serif;
-  font-size: 32px;
+  font-size: 35px;
   padding-left: 50px;
 }
