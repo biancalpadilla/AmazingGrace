@@ -47,15 +47,14 @@ function dragndropInit() {
           $("#numCorrect").text(correct);
           showInfo(dataid);
 
-          $("#correct" + " allNames[which]").show();
-
           $(this).click(function () {
             showInfo(dataid);
           });
 
           if(correct == 10) {
             $("#share").text("It took you " + attempts +
-              " attempts to match them all. Share your score!");
+              " attempts to match them all!");
+            $("#shareCon").show();
           }
 
         } else {
@@ -69,7 +68,9 @@ function dragndropInit() {
 
   $("#detail").click(function () {
     $("#detail").hide();
-    $("#detail").animate({opacity: '0'}, 500);
+    $("#detail").animate({
+      opacity: '0'
+    }, 500);
   });
 }
 
@@ -90,4 +91,4 @@ function showInfo(which) {
 $(document)
   .ready(function () {
     dragndropInit();
-});
+  });

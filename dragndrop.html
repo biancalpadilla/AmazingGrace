@@ -18,6 +18,7 @@
   <!-- font-family: 'Montserrat', sans-serif; -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'
   type='text/css'>
+  <link rel="stylesheet" href="./css/material-fullpalette.css">
   <link rel="stylesheet" href="./css/material.css">
   <link rel="stylesheet" href="./css/ripples.css">
   <link rel="stylesheet" href="./css/roboto.css">
@@ -49,13 +50,29 @@
   <!-- NAVBAR END-->
   <div class='container'>
     <div id="shareCon">
-      <p class="congrats">Congratulations!</p>
-      <p id="share">It took you 00 attempts to figure it out.</p>
+      <div class="alert alert-dismissable alert-success">
+        <button type="button" class="close" data-dismiss="alert">X</button>
+        <strong><p class="congrats">Well Done!</p></strong></a>
+        <p id="share">It took you 00 attempts to build your Pi.</p>
+      </div>
     </div>
-    <div id="scoreCon">
-      <div class="instruct">Drag the parts on the left to their corresponding places below.</div>
-      <div class="score">Correct: <span class="numDisp" id="numCorrect">0</span></div>
-      <div class="score">Attempts: <span class="numDisp" id="numAttempts">0</span></div>
+    <div class="panel panel-material-pink">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align: center; font-size: 24px;">Build your Raspberry Pi</h3>
+      </div>
+      <div class="panel-body">
+        <div id="scoreCon">
+          <div class="instruct">Drag the parts below their corresponding places below.</div>
+          <ul class="nav nav-pills count">
+            <li>
+              <div class="score">Correct: <span class="badge" class="numDisp" id="numCorrect">0</span></div>
+            </li>
+            <li>
+              <div class="score"> Attempts: <span class="badge" class="numDisp" id="numAttempts">0</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div style="clear:both"></div>
     <div id="detail">
@@ -67,13 +84,15 @@
     </div>
   </div>
   <!--DRAGGABLE THINGS-->
-  <div id="partsCon" class="container" style="width: 65%">
+  <!--   <div class="panel panel-default">
+    <div class="panel-body"> -->
+  <div id="partsCon1" class="container" style="width: 65%">
     <div class="row">
-      <div class="col-md-2">
-        <div class="individualpart draggable" id="cameracsi"><img src="images/cameracsi.png" /></div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="hdmi"><img src="images/hdmi.png" /></div>
       </div>
-      <div class="col-md-2">
-        <div class="individualpart draggable" id="usbethernetcontroller"><img src="images/controller.png" /></div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="cameracsi"><img src="images/cameracsi.png" /></div>
       </div>
       <div class="col-md-2">
         <div class="individualpart draggable" id="cpugpu"><img src="images/cpugpu.png" /></div>
@@ -86,20 +105,20 @@
       </div>
     </div>
     <div row="row">
-      <div class="col-md-2">
-        <div class="individualpart draggable" id="hdmi"><img src="images/hdmi.png" /></div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="usb2"><img src="images/usb2.png" /></div>
+      </div>
+      <div class="col-md-offset-2 col-md-1">
+        <div class="individualpart draggable" id="usbethernetcontroller"><img src="images/controller.png" /></div>
+      </div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="videoaudio"><img src="images/videoaudio.png" /></div>
       </div>
       <div class="col-md-2">
         <div class="individualpart draggable" id="microusb"><img src="images/microusb.png" /></div>
       </div>
       <div class="col-md-2">
         <div class="individualpart draggable" id="usb"><img src="images/usb.png" /></div>
-      </div>
-      <div class="col-md-2">
-        <div class="individualpart draggable" id="usb2"><img src="images/usb2.png" /></div>
-      </div>
-      <div class="col-md-2">
-        <div class="individualpart draggable" id="videoaudio"><img src="images/videoaudio.png" /></div>
       </div>
     </div>
   </div>
@@ -113,8 +132,8 @@
     </div>
   </div>
   <!--DROP TARGETS-->
-  <div class="container" style="width: 50%">
-    <img src="./images/raspberrypi.png" />
+  <div class="container" id="pi">
+    <img id="imgpi" src="./images/raspberrypi.png" />
     <div class="droppable" id="usb" data-id="0">
       <img src="./images/usbempty.png">
     </div>
