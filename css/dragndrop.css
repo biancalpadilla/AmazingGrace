@@ -16,11 +16,11 @@
   padding-bottom: 20px;
   padding-left: 50px;
   border-radius: 4px;
-  border: 0;
+  border: 6px solid;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-  border-color: #ddd;
+  border-color: #FFF;
   margin-bottom: 20px;
-  background-color: rgb(120, 212, 253);
+  background-color: rgb(3, 169, 244);
 }
 
 .row .parts {
@@ -30,61 +30,61 @@
 div#usb.droppable.ui-droppable {
   position: absolute;
   left: 916px;
-  top: 640px;
+  top: 652px;
 }
 
 div#usb2.droppable.ui-droppable {
   position: absolute;
   left: 916px;
-  top: 762px;
+  top: 774px;
 }
 
 div#ethernet.droppable.ui-droppable {
   position: absolute;
   left: 886px;
-  top: 877px;
+  top: 889px;
 }
 
 div#usbethernetcontroller.droppable.ui-droppable {
   position: absolute;
   left: 800px;
-  top: 742px;
+  top: 754px;
 }
 
 div#videoaudio.droppable.ui-droppable {
   position: absolute;
   left: 781px;
-  top: 917px;
+  top: 929px;
 }
 
 div#cameracsi.droppable.ui-droppable {
   position: absolute;
   left: 734px;
-  top: 849px;
+  top: 861px;
 }
 
 div#cpugpu.droppable.ui-droppable {
   position: absolute;
   left: 594px;
-  top: 755px;
+  top: 767px;
 }
 
 div#hdmi.droppable.ui-droppable {
   position: absolute;
   left: 604px;
-  top: 934px;
+  top: 946px;
 }
 
 div#microusb.droppable.ui-droppable {
   position: absolute;
   left: 483px;
-  top: 970px;
+  top: 982px;
 }
 
 div#displaydsi.droppable.ui-droppable {
   position: absolute;
   left: 453px;
-  top: 737px;
+  top: 749px;
 }
 
 #scoreCon {
@@ -134,7 +134,7 @@ div#displaydsi.droppable.ui-droppable {
 #detail #detailCon {
   width: 520px;
   height: 398px;
-  background-color: #DC5D7F;
+  background-color: #03A9F4;
   border: 1px solid #CCC;
   -moz-box-shadow: 0 0 15px #999;
   -webkit-box-shadow: 0 0 15px #999;
@@ -147,18 +147,15 @@ div#displaydsi.droppable.ui-droppable {
 }
 
 #photoCon {
-  width: 250px;
-  height: 350px;
-  background-color: #000;
-  float: left;
-  margin-right: 20px;
+  background-color: #03A9F4;
+  margin-left: 89px;
+
 }
 
 #detail #closebtn {
   font-size: 15px;
   float: right;
   color: #fff;
-  border: 2px solid #fff;
   padding: 0 2px 0 2px;
   cursor: pointer;
 }
@@ -171,13 +168,12 @@ div#displaydsi.droppable.ui-droppable {
 }
 
 #shareCon {
-  float: left;
-  font-size: 22px;
-  padding-top: 10px;
-  position: absolute;
-  top: 350px;
-  top: 372px;
-  left: 485px;
+    float: left;
+    font-size: 22px;
+    padding-top: 0px;
+    position: absolute;
+    top: 350px;
+    left: 485px;
 }
 
 .congrats {
@@ -199,8 +195,12 @@ ul.nav.nav-pills.count {
   padding-bottom: 50px;
 }
 
-/*#imgpi {
-  position: absolute;
-  left: 437px;
-  top: 622px;
-}*/
+a.btn.btn-success.next {
+  float: right;
+  margin-top: 30px;
+}
+
+a.btn.btn-info.back {
+  margin-top: 30px;
+  margin-left: 23px;
+}

@@ -1,9 +1,9 @@
 ﻿/* Built using a tutorial from: Tutsplus
 https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
 
-( function ( $ ) {
+(function ($) {
 
-  $.fn.jquizzy = function ( settings ) {
+  $.fn.jquizzy = function (settings) {
 
     var defaults = {
       questions: null,
@@ -32,16 +32,16 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
 
     };
 
-    var config = $.extend( defaults, settings );
-    if ( config.questions === null ) {
-      $( this ).html(
+    var config = $.extend(defaults, settings);
+    if(config.questions === null) {
+      $(this).html(
         '<div class="intro-container slide-container"><h2 class="qTitle">Failed to parse questions.</h2></div>'
       );
       return;
     }
 
-    var superContainer = $( this ),
-      answers = [ ],
+    var superContainer = $(this),
+      answers = [],
       introFob =
       ' <div class="intro-container slide-container"><div class="question-number">' +
       config.startText + '</div><a class="nav-start" href="#"><img src="' +
@@ -52,29 +52,29 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
       '</div><div class="result-keeper"></div></div><div class="notice">Please choose an answer.</div><div class="progress-keeper" ><div class="progress"></div></div>',
       contentFob = '',
       questionsIteratorIndex, answersIteratorIndex;
-    superContainer.addClass( 'main-quiz-holder' );
+    superContainer.addClass('main-quiz-holder');
 
-    for ( questionsIteratorIndex = 0; questionsIteratorIndex < config.questions
-      .length; questionsIteratorIndex++ ) {
+    for(questionsIteratorIndex = 0; questionsIteratorIndex < config.questions
+      .length; questionsIteratorIndex++) {
       contentFob +=
         '<div class="slide-container"><div class="question-number">' + (
-          questionsIteratorIndex + 1 ) + '/' + config.questions.length +
+          questionsIteratorIndex + 1) + '/' + config.questions.length +
         '</div><div class="question">' + config.questions[
-          questionsIteratorIndex ].question + '</div><ul class="answers">';
-      for ( answersIteratorIndex = 0; answersIteratorIndex < config.questions[
-          questionsIteratorIndex ].answers.length; answersIteratorIndex++ ) {
-        contentFob += '<li>' + config.questions[ questionsIteratorIndex ].answers[
-          answersIteratorIndex ] + '</li>';
+          questionsIteratorIndex].question + '</div><ul class="answers">';
+      for(answersIteratorIndex = 0; answersIteratorIndex < config.questions[
+          questionsIteratorIndex].answers.length; answersIteratorIndex++) {
+        contentFob += '<li>' + config.questions[questionsIteratorIndex].answers[
+          answersIteratorIndex] + '</li>';
       }
 
       contentFob += '</ul><div class="nav-container">';
 
-      if ( questionsIteratorIndex !== 0 ) {
+      if(questionsIteratorIndex !== 0) {
         contentFob +=
           '<div class="prev"><a class="nav-previous btn btn-info btn-raised" href="#">Prev</a></div>';
       }
 
-      if ( questionsIteratorIndex < config.questions.length - 1 ) {
+      if(questionsIteratorIndex < config.questions.length - 1) {
         contentFob +=
           '<div class="next"><a class="nav-next btn btn-success btn-raised" href="#">Next</a></div>';
       } else {
@@ -83,196 +83,198 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
       }
 
       contentFob += '</div></div>';
-      answers.push( config.questions[ questionsIteratorIndex ].correctAnswer );
+      answers.push(config.questions[questionsIteratorIndex].correctAnswer);
     }
 
-    superContainer.html( introFob + contentFob + exitFob );
+    superContainer.html(introFob + contentFob + exitFob);
 
-    var progress = superContainer.find( '.progress' ),
-      progressKeeper = superContainer.find( '.progress-keeper' ),
-      notice = superContainer.find( '.notice' ),
-      progressWidth = progressKeeper.width( ),
-      userAnswers = [ ],
+    var progress = superContainer.find('.progress'),
+      progressKeeper = superContainer.find('.progress-keeper'),
+      notice = superContainer.find('.notice'),
+      progressWidth = progressKeeper.width(),
+      userAnswers = [],
       questionLength = config.questions.length,
-      slidesList = superContainer.find( '.slide-container' );
+      slidesList = superContainer.find('.slide-container');
 
-    function checkAnswers( ) {
-      var resultArr = [ ],
+    function checkAnswers() {
+      var resultArr = [],
         flag = false;
-      for ( i = 0; i < answers.length; i++ ) {
+      for(i = 0; i < answers.length; i++) {
 
-        if ( answers[ i ] == userAnswers[ i ] ) {
+        if(answers[i] == userAnswers[i]) {
           flag = true;
         } else {
           flag = false;
         }
-        resultArr.push( flag );
+        resultArr.push(flag);
       }
       return resultArr;
     }
 
-    function roundReloaded( num, dec ) {
-      var result = Math.round( num * Math.pow( 10, dec ) ) / Math.pow( 10,
-        dec );
+    function roundReloaded(num, dec) {
+      var result = Math.round(num * Math.pow(10, dec)) / Math.pow(10,
+        dec);
       return result;
     }
 
-    function judgeSkills( score ) {
+    function judgeSkills(score) {
       var returnString;
-      if ( score === 100 )
+      if(score === 100)
         return config.resultComments.perfect;
-      else if ( score > 90 )
+      else if(score > 90)
         return config.resultComments.excellent;
-      else if ( score > 70 )
+      else if(score > 70)
         return config.resultComments.good;
-      else if ( score > 50 )
+      else if(score > 50)
         return config.resultComments.average;
-      else if ( score > 35 )
+      else if(score > 35)
         return config.resultComments.bad;
-      else if ( score > 20 )
+      else if(score > 20)
         return config.resultComments.poor;
       else
         return config.resultComments.worst;
     }
 
-    progressKeeper.hide( );
-    notice.hide( );
-    slidesList.hide( ).first( ).fadeIn( 500 );
+    progressKeeper.hide();
+    notice.hide();
+    slidesList.hide().first().fadeIn(500);
 
-    superContainer.find( 'li' ).click( function ( ) {
-      var thisLi = $( this );
+    superContainer.find('li').click(function () {
+      var thisLi = $(this);
 
-      if ( thisLi.hasClass( 'selected' ) ) {
-        thisLi.removeClass( 'selected' );
+      if(thisLi.hasClass('selected')) {
+        thisLi.removeClass('selected');
       } else {
-        thisLi.parents( '.answers' ).children( 'li' ).removeClass(
-          'selected' );
-        thisLi.addClass( 'selected' );
+        thisLi.parents('.answers').children('li').removeClass(
+          'selected');
+        thisLi.addClass('selected');
       }
-    } );
+    });
 
-    superContainer.find( '.nav-start' ).click( function ( ) {
+    superContainer.find('.nav-start').click(function () {
 
-      $( this ).parents( '.slide-container' ).fadeOut( 500, function ( ) {
-        $( this ).next( ).fadeIn( 500 );
-        progressKeeper.fadeIn( 500 );
-      } );
+      $(this).parents('.slide-container').fadeOut(500, function () {
+        $(this).next().fadeIn(500);
+        progressKeeper.fadeIn(500);
+      });
       return false;
 
-    } );
+    });
 
-    superContainer.find( '.next' ).click( function ( ) {
+    superContainer.find('.next').click(function () {
 
-      if ( $( this ).parents( '.slide-container' ).find( 'li.selected' )
-        .length === 0 ) {
-        notice.fadeIn( 300 );
+      if($(this).parents('.slide-container').find('li.selected')
+        .length === 0) {
+        notice.fadeIn(300);
         return false;
       }
 
-      notice.hide( );
-      $( this ).parents( '.slide-container' ).fadeOut( 500, function ( ) {
-        $( this ).next( ).fadeIn( 500 );
-      } );
-      progress.animate( {
-        width: progress.width( ) + Math.round( progressWidth /
-          questionLength )
-      }, 500 );
+      notice.hide();
+      $(this).parents('.slide-container').fadeOut(500, function () {
+        $(this).next().fadeIn(500);
+      });
+      progress.animate({
+        width: progress.width() + Math.round(progressWidth /
+          questionLength)
+      }, 500);
       return false;
-    } );
+    });
 
-    superContainer.find( '.prev' ).click( function ( ) {
-      notice.hide( );
-      $( this ).parents( '.slide-container' ).fadeOut( 500, function ( ) {
-        $( this ).prev( ).fadeIn( 500 );
-      } );
+    superContainer.find('.prev').click(function () {
+      notice.hide();
+      $(this).parents('.slide-container').fadeOut(500, function () {
+        $(this).prev().fadeIn(500);
+      });
 
-      progress.animate( {
-        width: progress.width( ) - Math.round( progressWidth /
-          questionLength )
-      }, 500 );
+      progress.animate({
+        width: progress.width() - Math.round(progressWidth /
+          questionLength)
+      }, 500);
       return false;
-    } );
+    });
 
-    superContainer.find( '.final' ).click( function ( ) {
-      if ( $( this ).parents( '.slide-container' ).find( 'li.selected' )
-        .length === 0 ) {
-        notice.fadeIn( 300 );
+    superContainer.find('.final').click(function () {
+      if($(this).parents('.slide-container').find('li.selected')
+        .length === 0) {
+        notice.fadeIn(300);
         return false;
       }
 
-      superContainer.find( 'li.selected' ).each( function ( index ) {
-        userAnswers.push( $( this ).parents( '.answers' ).children(
-          'li' ).index( $( this ).parents( '.answers' ).find(
-          'li.selected' ) ) + 1 );
-      } );
+      superContainer.find('li.selected').each(function (index) {
+        userAnswers.push($(this).parents('.answers').children(
+          'li').index($(this).parents('.answers').find(
+          'li.selected')) + 1);
+      });
 
-      if ( config.sendResultsURL !== null ) {
-        var collate = [ ];
-        for ( r = 0; r < userAnswers.length; r++ ) {
-          collate.push( '{"questionNumber":"' + parseInt( r + 1, 10 ) +
-            '", "userAnswer":"' + userAnswers[ r ] + '"}' );
+      if(config.sendResultsURL !== null) {
+        var collate = [];
+        for(r = 0; r < userAnswers.length; r++) {
+          collate.push('{"questionNumber":"' + parseInt(r + 1, 10) +
+            '", "userAnswer":"' + userAnswers[r] + '"}');
         }
-        $.ajax( {
+        $.ajax({
           type: 'POST',
           url: config.sendResultsURL,
-          data: '{"answers": [' + collate.join( "," ) + ']}',
-          complete: function ( ) {
-            console.log( "OH HAI" );
+          data: '{"answers": [' + collate.join(",") + ']}',
+          complete: function () {
+            console.log("OH HAI");
           }
-        } );
+        });
       }
 
-      progressKeeper.hide( );
-      var results = checkAnswers( ),
+      progressKeeper.hide();
+      var results = checkAnswers(),
         resultSet = '',
         trueCount = 0,
         shareButton = '',
         score,
         url;
 
-      if ( config.shortURL === null ) {
+      if(config.shortURL === null) {
         config.shortURL = window.location
       };
 
-      for ( var i = 0, toLoopTill = results.length; i < toLoopTill; i++ ) {
-        if ( results[ i ] === true ) {
+      for(var i = 0, toLoopTill = results.length; i < toLoopTill; i++) {
+        if(results[i] === true) {
           trueCount++;
           isCorrect = true;
         }
-        resultSet += '<div class="result-row"> Question #' + ( i + 1 ) +
-          ( results[ i ] === true ?
+        resultSet += '<div class="result-row"> Question #' + (i + 1) +
+          (results[i] === true ?
             "<div class='correct btn btn-success btn-raised'><span>Correct</span></div>" :
-            "<div class='wrong btn btn-success btn-danger'><span>Incorrect</span></div>" );
+            "<div class='wrong btn btn-success btn-danger'><span>Incorrect</span></div>"
+          );
         resultSet += '<div class="resultsview-qhover">' + config.questions[
-          i ].question;
+          i].question;
         resultSet += "<ul>";
-        for ( answersIteratorIndex = 0; answersIteratorIndex < config.questions[
-            i ].answers.length; answersIteratorIndex++ ) {
+        for(answersIteratorIndex = 0; answersIteratorIndex < config.questions[
+            i].answers.length; answersIteratorIndex++) {
           var classestoAdd = '';
-          if ( config.questions[ i ].correctAnswer ==
-            answersIteratorIndex + 1 ) {
+          if(config.questions[i].correctAnswer ==
+            answersIteratorIndex + 1) {
             classestoAdd += 'right';
           }
-          if ( userAnswers[ i ] == answersIteratorIndex + 1 ) {
+          if(userAnswers[i] == answersIteratorIndex + 1) {
             classestoAdd += ' selected';
           }
           resultSet += '<li class="' + classestoAdd + '">' + config.questions[
-            i ].answers[ answersIteratorIndex ] + '</li>';
+            i].answers[answersIteratorIndex] + '</li>';
         }
         resultSet += '</ul></div></div>';
 
       }
-      score = roundReloaded( trueCount / questionLength * 100, 2 );
+      score = roundReloaded(trueCount / questionLength * 100, 2);
 
-      if ( config.addTwitter !== false ) {
-        shareButton += '<a style="margin-left: 37px;margin-right: 35px !important;" href="https://twitter.com/share?url=' +
-          encodeURIComponent( config.socialStatus.replace( "{score}",
-            score ) ) + ' @ ' + config.shortURL +
+      if(config.addTwitter !== false) {
+        shareButton +=
+          '<a style="margin-left: 37px;margin-right: 35px !important;" href="https://twitter.com/share?url=' +
+          encodeURIComponent(config.socialStatus.replace("{score}",
+            score)) + ' @ ' + config.shortURL +
           '" class="share-button-twitter" target="_blank" ><img src="' +
           config.twitterImage + '"  width="100" /></a>';
       }
 
-      if ( config.addFacebook !== false ) {
+      if(config.addFacebook !== false) {
         shareButton +=
           '<a style="margin-right: 35px !important;" href="https://www.facebook.com/sharer/sharer.php?u=' +
           config.shortURL +
@@ -280,29 +282,33 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
           config.facebookImage + '"  width="100" /></a>';
       }
 
-      if ( config.addGooglePlus !== false ) {
-        shareButton += '<a style="margin-right: 12px !important;" href="https://plus.google.com/share?url=' +
+      if(config.addGooglePlus !== false) {
+        shareButton +=
+          '<a style="margin-right: 12px !important;" href="https://plus.google.com/share?url=' +
           config.shortURL +
           '" class="share-button-gp" target="_blank" ><img src="' +
           config.gPlusImage + '"  width="100" /></a>';
       }
 
-      resultSet = '<h2 class="qTitle">' + judgeSkills( score ) +
+      resultSet = '<h2 class="qTitle">' + judgeSkills(score) +
         ' You scored ' + score + '%</h2>' + shareButton +
         '<div class="jquizzy-clear"></div>' + resultSet +
-        '<div class="jquizzy-clear"></div>';
-      superContainer.find( '.result-keeper' ).html( resultSet ).show(
-        500 );
-      superContainer.find( '.resultsview-qhover' ).hide( );
-      superContainer.find( '.result-row' ).hover( function ( ) {
-        $( this ).find( '.resultsview-qhover' ).show( );
-      }, function ( ) {
-        $( this ).find( '.resultsview-qhover' ).hide( );
-      } );
-      $( this ).parents( '.slide-container' ).fadeOut( 500, function ( ) {
-        $( this ).next( ).fadeIn( 500 );
-      } );
+        '<div class="jquizzy-clear"></div>' +
+        '<div class="jquizzy-clear"></div>' +
+        '<a href="javascript:void(0)" class="btn btn-info btn-raised">Back</a>' +
+        '<a href="javascript:void(0)" class="btn btn-success nextbtn btn-raised">Next</a>';
+      superContainer.find('.result-keeper').html(resultSet).show(
+        500);
+      superContainer.find('.resultsview-qhover').hide();
+      superContainer.find('.result-row').hover(function () {
+        $(this).find('.resultsview-qhover').show();
+      }, function () {
+        $(this).find('.resultsview-qhover').hide();
+      });
+      $(this).parents('.slide-container').fadeOut(500, function () {
+        $(this).next().fadeIn(500);
+      });
       return false;
-    } );
+    });
   };
-} )( jQuery );
+})(jQuery);

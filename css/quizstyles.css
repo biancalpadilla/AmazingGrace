@@ -260,3 +260,13 @@ body {
   text-decoration: none;
   color: #6C6C6C;
 }
+
+.btn.btn-success.nextbtn {
+  margin-top: 20px;
+  float: right;
+}
+
+.btn.btn-info.backbtn {
+    margin-top: 20px;
+    float: left;
+}
