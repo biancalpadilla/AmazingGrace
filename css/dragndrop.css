@@ -1,127 +1,132 @@
-#overallCon { width: 700px; }
+#overallCon {
+  width: 700px;
+}
 
-#headCon {
+#partsCon {
   text-align: center;
   padding-top: 20px;
 }
 
 .row .parts {
-padding-top: inherit;
-
+  padding-top: inherit;
 }
 
-div#usb.droppable.ui-droppable{
-    position: absolute;
-    left: 851px;
-    top: 484px;
+div#usb.droppable.ui-droppable {
+  position: absolute;
+  left: 851px;
+  top: 484px;
 }
 
-div#usb2.droppable.ui-droppable{
-    position: absolute;
-    left: 852px;
-    top: 606px;
+div#usb2.droppable.ui-droppable {
+  position: absolute;
+  left: 852px;
+  top: 606px;
 }
 
-div#ethernet.droppable.ui-droppable{
-    position: absolute;
-    left: 822px;
-    top: 721px;
+div#ethernet.droppable.ui-droppable {
+  position: absolute;
+  left: 822px;
+  top: 721px;
 }
 
-div#usbethernetcontroller.droppable.ui-droppable{
-    position: absolute;
-    left: 736px;
-    top: 586px;
+div#usbethernetcontroller.droppable.ui-droppable {
+  position: absolute;
+  left: 736px;
+  top: 586px;
 }
 
-div#videoaudio.droppable.ui-droppable{
-    position: absolute;
-    left: 717px;
-    top: 761px;
+div#videoaudio.droppable.ui-droppable {
+  position: absolute;
+  left: 717px;
+  top: 761px;
 }
 
-div#cameracsi.droppable.ui-droppable{
-    position: absolute;
-    left: 671px;
-    top: 693px;
+div#cameracsi.droppable.ui-droppable {
+  position: absolute;
+  left: 671px;
+  top: 693px;
 }
 
-div#cpugpu.droppable.ui-droppable{
-    position: absolute;
-    left: 530px;
-    top: 600px;
+div#cpugpu.droppable.ui-droppable {
+  position: absolute;
+  left: 530px;
+  top: 600px;
 }
 
-div#hdmi.droppable.ui-droppable{
-    position: absolute;
-    left: 540px;
-    top: 777px;
+div#hdmi.droppable.ui-droppable {
+  position: absolute;
+  left: 540px;
+  top: 777px;
 }
 
-div#microusb.droppable.ui-droppable{
-    position: absolute;
-    left: 419px;
-    top: 814px;
+div#microusb.droppable.ui-droppable {
+  position: absolute;
+  left: 419px;
+  top: 814px;
 }
 
-div#displaydsi.droppable.ui-droppable{
-    position: absolute;
-    left: 389px;
-    top: 581px;
+div#displaydsi.droppable.ui-droppable {
+  position: absolute;
+  left: 389px;
+  top: 581px;
 }
 
-#scoreCon { width: 170px; height: 100px; float: right; }
+#scoreCon {
+  text-size: 20px;
+  height: 100px;
+  text-align: center;
+}
 
 #raspberrypiCon {
-  margin: 20px 0 0 0 ;}
-
-.individualpart {
-
+  margin: 20px 0 0 0;
 }
 
-.headcircle img {
-  margin-bottom: 0px;
+.instruct {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 9px;
 }
 
-
-.headcircleinside img {
-  margin-bottom: 0px; width: 50px;
+.score {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #666
 }
 
-.atattoo { float: left; margin-right: 3px; }
+.numDisp {
+  font: 18px;
+  color: #333;
+}
 
-.messagewrong { position: absolute; margin: 5px; font: bold 16px Arial; color: #CC0000; text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #FFF; display: none;}
-.messageright { position: absolute; margin: 5px; font: bold 16px Arial; color: #339933; text-shadow: 0 0 0.2em #FFF, 0 0 0.2em #FFF; display: none;}
-
-.instruct { font: 14px Arial; color: #666; margin-bottom: 20px;}
-.score { font: bold 18px Arial; margin-bottom: 5px; color: #666 }
-.numDisp { font: 18px Arial; color: #333; }
-
-.boxHover { opacity: .66; }
+.boxHover {
+  opacity: .66;
+}
 
 #detail {
-  height: 450px;
-  width: 100%;
-  background-color: rgba(255, 255, 255, .75);
+  height: 100%;
+  width: 76%;
+  background-color: rgba(255, 255, 255, .80);
   position: absolute;
   top: 190px;
   display: none;
   z-index: 100;
   opacity: 0;
+  border-radius: 14px;
 }
 
 #detail #detailCon {
-  width: 445px;
-  height: 350px;
-  background-color: #FFF;
+  width: 520px;
+  height: 398px;
+  background-color: #DC5D7F;
   border: 1px solid #CCC;
   -moz-box-shadow: 0 0 15px #999;
   -webkit-box-shadow: 0 0 15px #999;
   box-shadow: 0 0 15px #999;
-  top: 40px;
-  left: 70px;
+  top: 22%;
+  left: 26%;
   padding: 15px;
   position: relative;
+  border-radius: 14px;
 }
 
 #photoCon {
@@ -133,29 +138,36 @@ div#displaydsi.droppable.ui-droppable{
 }
 
 #detail #closebtn {
-  font: bold 12px Arial, Sans Serif;
+  font-size: 15px;
   float: right;
-  color: #999;
-  border: 1px solid #CCC;
+  color: #fff;
+  border: 2px solid #fff;
   padding: 0 2px 0 2px;
   cursor: pointer;
 }
 
-#desc { font: 14px Arial; margin-top: 25px; color: #666; padding-right: 20px; }
-
-.credits-con { font: italic 11px Arial; color: #999; clear:both; padding-top: 10px; }
-
-#shareCon {
-  font: 14px Arial;
-
-  padding-top: 10px;
-  padding-left: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #FFF;
-  width: 410px;
-  height: 190px
+#desc {
+  font-size: 20px;
+  margin-top: 25px;
+  color: #eeeeee;
+  padding-right: 20px;
 }
 
-.congrats { font: bold 18px Arial; margin-bottom: 0px }
+#shareCon {
+  float: left;
+  font-size: 18px;
+  padding-top: 10px;
+  position: absolute;
+  top: 80px;
+  width: 410px;
+  height: 190px;
+}
+
+.congrats {
+  font: bold 18px;
+  margin-bottom: 0px
+}
+
+.correct {
+    display: none;
+}

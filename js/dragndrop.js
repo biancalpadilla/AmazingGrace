@@ -1,4 +1,6 @@
-var allNames = ['usb1', 'usb2', 'ethernet','usbethernetcontroller', 'videoaudio', 'cameracsi', 'cpugpu', 'hdmi', 'microusb', 'displaydsi'];
+var allParts = ['usb1', 'usb2', 'ethernet', 'usbethernetcontroller',
+  'videoaudio', 'cameracsi', 'cpugpu', 'hdmi', 'microusb', 'displaydsi'
+];
 
 var origXPos = [];
 var origYPos = [];
@@ -17,73 +19,75 @@ captions[7] = "HDMI";
 captions[8] = "Micro USB";
 captions[9] = "Display DSI";
 
-function tattoosInit() {
-  //console.log("ready");
-
-  $("#detail").hide();
-  $("#shareCon").hide();
-
-  $( ".draggable" ).draggable({ revert: "valid" });
-  $( ".droppable" ).droppable({
+function dragndropInit() {
+  $("#detail")
+    .hide();
+  $("#shareCon")
+    .hide();
+  $(".draggable")
+    .draggable({
+      revert: "valid"
+    });
+  $(".droppable")
+    .droppable({
       hoverClass: "boxHover",
-      drop: function( event, ui ) {
-        $( this )
-         var dragid = ui.draggable.attr("id").substring(1, ui.draggable.attr("id").length);
-         var dropid = $(this).attr("id").substring(1, $(this).attr("id").length);
-         var dataid = $(this).attr("data-id")
-         if (dragid == dropid) {
-          $("#" + dragid + "inside").css("display", "block");
-        $("#t" + dropid + " .messageright").css("display", "inline").delay(1500).fadeOut( "slow" );
-        ui.draggable.css("visibility", "hidden");
-        attempts ++;
-        correct ++;
-        $("#numAttempts").text(attempts);
-        $("#numCorrect").text(correct);
-        showInfo(dataid);
+      drop: function (event, ui) {
+        $(this)
+        var dragid = ui.draggable.attr("id").substring(1, ui.draggable.attr(
+          "id").length);
+        var dropid = $(this).attr("id").substring(1, $(this).attr("id").length);
+        var dataid = $(this).attr("data-id")
+        if(dragid == dropid) {
+          ui.draggable.css("visibility", "hidden");
 
-        $(this).click(function() {
+          // Counts number of times
+          attempts++;
+          correct++;
+          $("#numAttempts").text(attempts);
+          $("#numCorrect").text(correct);
           showInfo(dataid);
-        });
 
-        if (correct == 10) {
-          $("#share").text("It took you " + attempts + " attempts to match them all. Share your score!")
-          $("shareBtns").html("hello world");
-          $("#shareCon").show();
-        }
+          $("#correct" + " allNames[which]").show();
 
-           } else {
-            //console.log("wrong");
-            $("#t" + dropid + " .messagewrong").css("display", "inline").delay(1500).fadeOut( "slow" );
-            attempts ++;
-            $("#numAttempts").text(attempts);
-           }
+          $(this).click(function () {
+            showInfo(dataid);
+          });
+
+          if(correct == 10) {
+            $("#share").text("It took you " + attempts +
+              " attempts to match them all. Share your score!");
+          }
+
+        } else {
+          attempts++;
+          $("#numAttempts").text(attempts);
         }
+      }
     });
 
-    $( ".droppable2" ).droppable();
+  $(".droppable2").droppable();
 
-    $("#detail").click(function() {
+  $("#detail").click(function () {
     $("#detail").hide();
-    $("#detail").animate({ opacity: '0' }, 500);
+    $("#detail").animate({opacity: '0'}, 500);
   });
-
 }
 
 function showInfo(which) {
   $("#detail").show();
-  $("#detail").animate({ opacity: '1' }, 500);
+  $("#detail").animate({
+    opacity: '1'
+  }, 500);
   $("#detail #desc").text(captions[which]);
 
   var img = new Image();
-  img.src = "imgages/real-" + allNames[which] + ".jpg";
+  img.src = "imgages/real-" + allParts[which] + ".jpg";
   $("#detail #photoCon").empty();
   $("#detail #photoCon").append(img);
-
-
 }
 
 
-$(document).ready(function() {
-  tattoosInit();
-
+$(document)
+  .ready(function () {
+    dragndropInit();
 });
