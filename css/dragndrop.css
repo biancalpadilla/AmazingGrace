@@ -192,8 +192,15 @@ ul.nav.nav-pills.count {
   padding-top: 14px;
 }
 
-#imgpi {
+#pi {
+  width: 46%;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+/*#imgpi {
   position: absolute;
   left: 437px;
   top: 622px;
-}
+}*/
