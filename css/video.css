@@ -33,9 +33,9 @@ a {
 }
 
 a:hover {
-  color: #4CAF50;
+  color: #03A9F4;
 }
 
 a:focus {
-  color: #03A9F4;
+  color: #4CAF50;
 }
