@@ -144,12 +144,13 @@ div#displaydsi.droppable.ui-droppable {
   padding: 15px;
   position: relative;
   border-radius: 14px;
+  z-index: 1000;
 }
 
 #photoCon {
   background-color: #03A9F4;
   margin-left: 89px;
-
+  z-index: 1000;
 }
 
 #detail #closebtn {
@@ -198,9 +199,11 @@ ul.nav.nav-pills.count {
 a.btn.btn-success.next {
   float: right;
   margin-top: 30px;
+  z-index: 100;
 }
 
 a.btn.btn-info.back {
   margin-top: 30px;
   margin-left: 23px;
+  z-index: 100;
 }

@@ -1,11 +1,11 @@
 .panel {
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
 }
 
 .panel-body {
-    padding: 35px;
-    padding-left: 78px;
+  padding: 35px;
+  padding-left: 78px;
 }
 
 a.btn.btn-success.next {
@@ -26,4 +26,16 @@ p {
 
 body {
   padding-bottom: 75px;
+}
+
+a {
+  color: #E91E63;
+}
+
+a:hover {
+  color: #4CAF50;
+}
+
+a:focus {
+  color: #03A9F4;
 }

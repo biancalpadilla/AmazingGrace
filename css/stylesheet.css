@@ -46,3 +46,15 @@ body {
   font-size: 35px;
   padding-left: 50px;
 }
+
+a {
+  color: #E91E63;
+}
+
+a:hover {
+  color: #4CAF50;
+}
+
+a:focus {
+  color: #03A9F4;
+}
