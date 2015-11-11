@@ -3,27 +3,28 @@
 
 <head>
   <title>Drag and Drop</title>
-  <link type="text/css" href="css/dragndrop.css" rel="stylesheet" />
-  <link type="text/css" href="css/stylesheet.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
-  integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-  crossorigin="anonymous">
-  <!-- Bootstrap Material CSS -->
+  <!-- font-family: 'Source Sans Pro'; -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900"
   type="text/css" rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
   <!-- font-family: 'Satisfy', cursive; -->
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+  <!-- font-family: 'Bitter'; -->
   <link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet'
   type='text/css'>
   <!-- font-family: 'Montserrat', sans-serif; -->
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'
   type='text/css'>
-  <link rel="stylesheet" href="./css/material-fullpalette.css">
-  <link rel="stylesheet" href="./css/material.css">
-  <link rel="stylesheet" href="./css/ripples.css">
-  <link rel="stylesheet" href="./css/roboto.css">
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <link type="text/css" href="css/dragndrop.css" rel="stylesheet" />
+  <link type="text/css" href="css/stylesheet.css" rel="stylesheet" />
+  <!-- Bootstrap Material CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/material-fullpalette.min.css" />
+  <link rel="stylesheet" href="./css/material.min.css" />
+  <link rel="stylesheet" href="./css/ripples.min.css" />
+  <link rel="stylesheet" href="./css/roboto.min.css" />
+  <!-- Bootstrap Material CSS END -->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
   <script src="js/dragndrop.js"></script>
 </head>
 
@@ -48,6 +49,7 @@
     </div>
   </div>
   <!-- NAVBAR END-->
+  <!-- INSTRUCTINS AND SCOREBOARD -->
   <div class='container'>
     <div id="shareCon">
       <div class="alert alert-dismissable alert-material-pink">
@@ -76,6 +78,8 @@
         </div>
       </div>
     </div>
+    <!-- END INSTRUCTION AND SCOREBOARD -->
+    <!-- CORRECT DRAGNDROP MESSAGE -->
     <div style="clear:both"></div>
     <div id="detail">
       <div id="detailCon">
@@ -85,9 +89,8 @@
       </div>
     </div>
   </div>
+  <!-- END DRAGNDROP MESSAGE -->
   <!--DRAGGABLE THINGS-->
-  <!--   <div class="panel panel-default">
-    <div class="panel-body"> -->
   <div id="partsCon1" class="container" style="width: 65%">
     <div class="row">
       <div class="col-md-offset-1 col-md-1">
@@ -125,14 +128,6 @@
     </div>
   </div>
   <!--END DRAGGABLE THINGS-->
-  <div style="clear:both"></div>
-  <div id="detail">
-    <div id="detailCon">
-      <div id="closebtn">X</div>
-      <div id="photoCon"></div>
-      <div id="desc"></div>
-    </div>
-  </div>
   <!--DROP TARGETS-->
   <div class="container" id="pi">
     <div class="droppable" id="usb" data-id="0">
@@ -169,5 +164,4 @@
   </div>
   <!--END DROP TARGETS-->
 </body>
-
 </html>
