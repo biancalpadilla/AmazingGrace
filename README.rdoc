@@ -1,28 +1,37 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+AMAZING GRACE
+Wyncode Final Projects
+Date: Nov 19 2015
 
-Things you may want to cover:
+SUMMARY:
+Amazing Grace aims to be the largest community to get girls interested in science, technology, art, engineering, and math (STEAM) by catering to the needs and interests of girls. Amazing Grace teaches girls about topics in STEAM through tutorials, games, and quizzes that are designed specifically for girls.
 
-* Ruby version
+MISSION:
+Amazing Grace is dedicated to increasing the participation of girls in STEM within an informal environment in order to support women throughout their academic and professional experiences.
 
-* System dependencies
+FEATURES:
++ User Authentication
+  - User Profiles
+  - Avatars
++ Lessons
+  - Create a website using HTML and CSS
+  - Build your own Computer using Raspberry Pi
+  - History of Women in CS
++ Lesson Types:
+  - Video 
+  - To-Do Checklist 
+  - Multiple Choice Quiz
+  - Drag-n-Drop GAME
+  - Integrated Development Environment (IDE) with source code editor, build automation tools and a debugger
++ Forum
+  - Ask Questions 
+  - Answer Questions
+  - Upvote Answers
+  - Post Links and Resources
+  - Tag features on questions that can redirect students to resources 
+  - Search Feature
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+FUTURE GOALS:
+  - More Lessons and Tutorials
+  - Language Support: Spanish
