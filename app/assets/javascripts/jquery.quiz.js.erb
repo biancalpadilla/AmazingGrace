@@ -290,13 +290,15 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
           config.gPlusImage + '"  width="100" /></a>';
       }
 
+
       resultSet = '<h2 class="qTitle">' + judgeSkills(score) +
         ' You scored ' + score + '%</h2>' + shareButton +
         '<div class="jquizzy-clear"></div>' + resultSet +
         '<div class="jquizzy-clear"></div>' +
         '<div class="jquizzy-clear"></div>' +
-        '<a href="javascript:void(0)" class="btn btn-info btn-raised quiz">Back</a>' +
-        '<a href="javascript:void(0)" class="btn btn-success nextbtn btn-raised quiz">Next</a>';
+        '<a href="<%= Rails.application.routes.url_helpers.html_lesson_path %>" class="btn btn-info backbtn btn-raised">Back</a>' +
+        '<a href="<%= Rails.application.routes.url_helpers.code_lesson_path %>" class="btn btn-success nextbtn btn-raised">Next</a>';
+
       superContainer.find('.result-keeper').html(resultSet).show(
         500);
       superContainer.find('.resultsview-qhover').hide();

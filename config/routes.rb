@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'lessons/dragndrop', to: 'lessons#dragndrop', as: 'dragndrop_lesson'
   get 'lessons/raspi', to: 'lessons#raspi', as: 'raspi_lesson'
   get 'lessons/setup', to: 'lessons#setup', as: 'setup_lesson'
-
+  get 'lessons/code', to: 'lessons#code', as: 'code_lesson'
+  get 'lessons/html', to: 'lessons#html', as: 'html_lesson'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

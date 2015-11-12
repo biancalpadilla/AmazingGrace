@@ -17,4 +17,10 @@ class LessonsController < ApplicationController
 
   def main
   end
+
+  def code
+  end
+
+  def html
+  end
 end

@@ -87,10 +87,25 @@ function showInfo(which) {
   }, 500);
   $("#detail #desc").text(captions[which]);
 
-  var img = new Image();
-  img.src = "images/real-" + allParts[which] + ".jpg";
-  $("#detail #photoCon").empty();
-  $("#detail #photoCon").append("<%= asset_path('img') %>");
+  var allParts = ['usb1', 'usb2', 'ethernet', 'usbethernetcontroller',
+  'videoaudio', 'cameracsi', 'cpugpu', 'hdmi', 'microusb', 'displaydsi'
+];
+
+var usb1 = '<%= asset_path("real-usb1")';
+var usb2 = '<%= asset_path("real-usb2")';
+var ethernet = '<%= asset_path("real-ethernet")';
+var usbethernetcontrollercontroller = '<%= asset_path("real-usbethernetcontroller")';
+var videoaudio = '<%= asset_path("real-videoaudio")';
+var cameracsi = '<%= asset_path("real-cameracsi")';
+var cpugpu = '<%= asset_path("real-cpugpu")';
+var hdmi = '<%= asset_path("real-hdmi")';
+var microusb = '<%= asset_path("real-microusb")';
+var displaydsi = '<%= asset_path("real-displaydsi")';
+
+  // var img = new Image();
+  // img.src = "real-" + allParts[which] + ".jpg";
+$("#detail #photoCon").empty();
+$("#detail #photoCon").append(usb1);
 }
 
 

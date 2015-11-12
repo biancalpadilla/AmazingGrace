@@ -68,5 +68,5 @@ $(document).ready(function () {
     tilesInit();
     tilesAnimation();
   });
-$(document).on('page:load', tilesInit)
+$(document).on('page:load', tilesInit);
 $(document).on('page:load', tilesAnimation);
