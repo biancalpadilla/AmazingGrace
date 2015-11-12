@@ -1,0 +1,13 @@
+<h1> Answer replied to</h1>
+<h2> Question </h2>
+<% @question = Question.find(@answers.question_id) %>
+<%= @question.title %>
+<p>
+<h2> Answer </h2>
+<%= @answer.response %>
+<p>
+<p>
+<%= link_to 'reply', new_answer_path %>
+<%= link_to 'edit answer', edit_answer_path %>
+</p>
+</p>

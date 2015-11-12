@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'lessons#main'
   get 'lessons/materials', to: 'lessons#materials', as: 'materials_lesson'
   get 'lessons/quiz', to: 'lessons#quiz', as: 'quiz_lesson'
@@ -8,6 +9,24 @@ Rails.application.routes.draw do
   get 'lessons/code', to: 'lessons#code', as: 'code_lesson'
   get 'lessons/html', to: 'lessons#html', as: 'html_lesson'
 
+  # get 'questions#index'
+  get 'forum', to: 'questions#index', as: 'forum_questions'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+  get 'tags/:tag', to: 'questions#index', as: :tag
+  # get '/questions/new' => 'questions#new'
+  # post '/questions/create' => 'questions#create'
+
+
+  resources :questions do
+    resources :answers do
+      post 'upvote'
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

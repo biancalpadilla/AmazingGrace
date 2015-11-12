@@ -34,3 +34,9 @@ a:hover {
 a:focus {
   color: #4CAF50;
 }
+
+.avatargravatar {
+border-radius: 50%;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+}

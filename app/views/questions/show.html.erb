@@ -1,0 +1,41 @@
+<h3> Question asked </h3>
+<h4> Title </h4>
+<%= @question.title %>
+<h4> Description </h4>
+<%= @question.description %>
+
+<p>
+    <h4> Tags </h4> <%= raw @question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+</p>
+
+<h4> Answers </h4>
+
+<ol>
+<%  @question.answers.each do |answer| %>
+  <li><%= answer.response %>
+    <%= pluralize(answer.votes.count, "vote") %>
+    <%= link_to "<i class='material-icons'>add</i>".html_safe, question_answer_upvote_path(@question,answer), class: "btn-floating btn-extra-small waves-effect waves-light red", method: :post  %>
+    <% if answer.user == current_user %>
+      <%= link_to "Edit", edit_question_answer_path(@question, answer) %>
+   <% end %>
+    <p>Added by <%= @question.user.name%></p>
+    </i></a>
+
+ </li>
+<% end %>
+</ol>
+<p>
+<p>
+<% if @question.user == current_user %>
+<%= link_to 'Edit', edit_question_path %>
+<%= link_to "Delete", @question, method: "delete" %>
+<% end %>
+
+<% if current_user %>
+<%= link_to 'Add a new answer for this question', new_question_answer_path(@question) %>
+<% end %>
+</p>
+</p>
+
+<%= link_to "Back", questions_path %>
+

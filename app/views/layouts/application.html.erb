@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Amazing Grace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
   <!-- Bootstrap Material CSS -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900"
   type="text/css" rel='stylesheet'>
@@ -26,10 +26,24 @@
     </div>
     <div class="navbar-collapse collapse navbar-material-light-blue-collapse">
       <ul class="nav navbar-nav">
+        <% if current_user %>
+          <li><a href="/logout">Log Out</a></li>
+          <% else %>
+          <li><a href="/login">Log in</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+        <% end %>
       </ul>
     </div>
   </div>
   <!-- NAVBAR END-->
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+     <p><%= msg %></p>
+    <% end %>
+  <% end %>
   <%= yield %>
 </body>
 </html>
+
+
+
