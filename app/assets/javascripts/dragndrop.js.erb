@@ -87,25 +87,41 @@ function showInfo(which) {
   }, 500);
   $("#detail #desc").text(captions[which]);
 
-  var allParts = ['usb1', 'usb2', 'ethernet', 'usbethernetcontroller',
-  'videoaudio', 'cameracsi', 'cpugpu', 'hdmi', 'microusb', 'displaydsi'
-];
+  var usb1 = '<%= asset_path("real-usb1.jpg") %>';
+  var usb2 = '<%= asset_path("real-usb2.jpg") %>';
+  var ethernet = '<%= asset_path("real-ethernet") %>';
+  var usbethernetcontroller = '<%= asset_path("real-usbethernetcontroller") %>';
+  var videoaudio = '<%= asset_path("real-videoaudio") %>';
+  var cameracsi = '<%= asset_path("real-cameracsi") %>';
+  var cpugpu = '<%= asset_path("real-cpugpu") %>';
+  var hdmi = '<%= asset_path("real-hdmi") %>';
+  var microusb = '<%= asset_path("real-microusb") %>';
+  var displaydsi = '<%= asset_path("real-displaydsi") %>';
 
-var usb1 = '<%= asset_path("real-usb1")';
-var usb2 = '<%= asset_path("real-usb2")';
-var ethernet = '<%= asset_path("real-ethernet")';
-var usbethernetcontrollercontroller = '<%= asset_path("real-usbethernetcontroller")';
-var videoaudio = '<%= asset_path("real-videoaudio")';
-var cameracsi = '<%= asset_path("real-cameracsi")';
-var cpugpu = '<%= asset_path("real-cpugpu")';
-var hdmi = '<%= asset_path("real-hdmi")';
-var microusb = '<%= asset_path("real-microusb")';
-var displaydsi = '<%= asset_path("real-displaydsi")';
+  $("#detail #photoCon").empty();
 
-  // var img = new Image();
-  // img.src = "real-" + allParts[which] + ".jpg";
-$("#detail #photoCon").empty();
-$("#detail #photoCon").append(usb1);
+  if (allParts[which] == 'usb1') {
+      $("#detail #photoCon").append("<img src=" + usb1 + " />");
+  } else if(allParts[which] == 'usb2') {
+      $("#detail #photoCon").append("<img src=" + usb2 + " />");
+  } else if(allParts[which] == 'ethernet') {
+      $("#detail #photoCon").append("<img src=" + ethernet + " />");
+  } else if(allParts[which] == 'usbethernetcontroller') {
+      $("#detail #photoCon").append("<img src=" + usbethernetcontroller + " />");
+  } else if(allParts[which] == 'videoaudio') {
+      $("#detail #photoCon").append("<img src=" + videoaudio + " />");
+  } else if(allParts[which] == 'cameracsi') {
+      $("#detail #photoCon").append("<img src=" + cameracsi + " />");
+  } else if(allParts[which] == 'cpugpu') {
+      $("#detail #photoCon").append("<img src=" + cpugpu + " />");
+  } else if(allParts[which] == 'hdmi') {
+      $("#detail #photoCon").append("<img src=" + hdmi + " />");
+  } else if(allParts[which] == 'microusb') {
+      $("#detail #photoCon").append("<img src=" + microusb + " />");
+  } else if(allParts[which] == 'displaydsi') {
+      $("#detail #photoCon").append("<img src=" + displaydsi + " />");
+  }
+
 }
 
 
