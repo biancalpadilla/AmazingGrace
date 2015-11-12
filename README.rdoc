@@ -23,7 +23,7 @@ FEATURES:
   - Video 
   - To-Do Checklist 
   - Multiple Choice Quiz
-  - Drag-n-Drop GAME
+  - Drag-n-Drop Game
   - Integrated Development Environment (IDE) with source code editor, build automation tools and a debugger
 + Forum
   - Ask Questions 
