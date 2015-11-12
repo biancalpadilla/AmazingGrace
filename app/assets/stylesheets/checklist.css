@@ -1,0 +1,42 @@
+.panel.checklist {
+    width: 50%;
+    margin: auto;
+}
+
+.panel-body.checklist {
+    padding: 35px;
+    padding-left: 78px;
+}
+
+a.next.checklist {
+  float: right;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+a.btn.btn-info.back.checklist {
+  margin-top: 30px;
+}
+
+/*p.checklist {
+  font-size: 18px;
+  color: rgba(51, 51, 51, 0.83);
+  padding-bottom: 10px;
+}
+
+body.checklist {
+  padding-bottom: 75px;
+}*/
+
+a {
+  color: #E91E63;
+}
+
+a:hover {
+  color: #03A9F4;
+}
+
+a:focus {
+  color: #4CAF50;
+}
+

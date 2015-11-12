@@ -1,0 +1,210 @@
+.panel.dragndrop {
+  width: 70%;
+  border-radius: 2px;
+  border: 0;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  margin-left: 15%;
+  margin-bottom: 30px;
+}
+
+#overallCon1 {
+  width: 700px;
+}
+
+#partsCon1 {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  border-radius: 4px;
+  border: 6px solid;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+  border-color: #FFF;
+  margin-bottom: 20px;
+  background-color: rgb(3, 169, 244);
+}
+
+.row .parts {
+  padding-top: inherit;
+}
+
+div#usb.droppable.ui-droppable {
+  position: absolute;
+  left: 916px;
+  top: 662px;
+}
+
+div#usb2.droppable.ui-droppable {
+  position: absolute;
+  left: 916px;
+  top: 784px;
+}
+
+div#ethernet.droppable.ui-droppable {
+  position: absolute;
+  left: 886px;
+  top: 899px;
+}
+
+div#usbethernetcontroller.droppable.ui-droppable {
+  position: absolute;
+  left: 800px;
+  top: 764px;
+}
+
+div#videoaudio.droppable.ui-droppable {
+  position: absolute;
+  left: 781px;
+  top: 939px;
+}
+
+div#cameracsi.droppable.ui-droppable {
+  position: absolute;
+  left: 734px;
+  top: 870px;
+}
+
+div#cpugpu.droppable.ui-droppable {
+  position: absolute;
+  left: 594px;
+  top: 778px;
+}
+
+div#hdmi.droppable.ui-droppable {
+  position: absolute;
+  left: 604px;
+  top: 956px;
+}
+
+div#microusb.droppable.ui-droppable {
+  position: absolute;
+  left: 483px;
+  top: 992px;
+}
+
+div#displaydsi.droppable.ui-droppable {
+  position: absolute;
+  left: 453px;
+  top: 758px;
+}
+
+#scoreCon {
+  font-size: 20px;
+  height: 100px;
+  text-align: center;
+  /*  border: 2px solid black;*/
+}
+
+#raspberrypiCon {
+  margin: 20px 0 0 0;
+}
+
+.instruct {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 9px;
+}
+
+.score {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #666
+}
+
+.numDisp {
+  font: 18px;
+  color: #333;
+}
+
+.boxHover {
+  opacity: .66;
+}
+
+#detail {
+  height: 100%;
+  width: 76%;
+  background-color: rgba(255, 255, 255, .80);
+  position: absolute;
+  top: 190px;
+  display: none;
+  z-index: 100;
+  opacity: 0;
+  border-radius: 14px;
+}
+
+#detail #detailCon {
+  width: 520px;
+  height: 398px;
+  background-color: #03A9F4;
+  border: 1px solid #CCC;
+  -moz-box-shadow: 0 0 15px #999;
+  -webkit-box-shadow: 0 0 15px #999;
+  box-shadow: 0 0 15px #999;
+  top: 22%;
+  left: 26%;
+  padding: 15px;
+  position: relative;
+  border-radius: 14px;
+  z-index: 1000;
+}
+
+#photoCon {
+  background-color: #03A9F4;
+  margin-left: 89px;
+  z-index: 1000;
+}
+
+#detail #closebtn {
+  font-size: 15px;
+  float: right;
+  color: #fff;
+  padding: 0 2px 0 2px;
+  cursor: pointer;
+}
+
+#desc {
+  font-size: 20px;
+  margin-top: 25px;
+  color: #eeeeee;
+  padding-right: 20px;
+}
+
+#shareCon {
+    float: left;
+    font-size: 22px;
+    padding-top: 0px;
+    position: absolute;
+    top: 350px;
+    left: 485px;
+}
+
+.congrats {
+  font: bold 18px;
+  margin-bottom: 0px
+}
+
+ul.nav.nav-pills.count.dragndrop {
+  padding-left: 36%;
+  margin-bottom: 0px;
+  list-style: none;
+  padding-top: 14px;
+}
+
+#pi {
+  width: 46%;
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+a.btn.btn-success.next.dragndrop {
+  float: right;
+  margin-top: 30px;
+  z-index: 100;
+}
+
+a.btn.btn-info.back.dragndrop {
+  margin-top: 30px;
+  margin-left: 23px;
+  z-index: 100;
+}
