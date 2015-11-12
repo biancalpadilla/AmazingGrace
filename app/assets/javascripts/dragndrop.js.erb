@@ -29,12 +29,9 @@ captions[9] =
   "Display Serial Interface, or DSI for short, is a ribbon connector that allows your Raspberry Pi to use a display, like a computer monitor.";
 
 function dragndropInit() {
-  $("#detail")
-    .hide();
-  $("#shareCon")
-    .hide();
-  $(".draggable")
-    .draggable({
+  $("#detail").hide();
+  $("#shareCon").hide();
+  $(".draggable").draggable({
       revert: "valid"
     });
   $(".droppable")
@@ -93,11 +90,11 @@ function showInfo(which) {
   var img = new Image();
   img.src = "images/real-" + allParts[which] + ".jpg";
   $("#detail #photoCon").empty();
-  $("#detail #photoCon").append(img);
+  $("#detail #photoCon").append("<%= asset_path('img') %>");
 }
 
 
-$(document)
-  .ready(function () {
+$(document).ready(function () {
     dragndropInit();
   });
+$(document).on('page:load', dragndropInit);

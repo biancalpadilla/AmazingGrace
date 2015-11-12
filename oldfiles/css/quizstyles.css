@@ -266,14 +266,8 @@ body {
   float: right;
 }
 
-.btn.btn-info.backbtn {
-    margin-top: 20px;
+a.btn.btn-info.btn-raised.quiz {
     float: left;
+    margin-top: 20px;
 }
 
-.btn.btn-info.btn-raised.quiz {
-
-}
-.btn.btn-success.nextbtn.btn-raised.quiz{
-
-}
