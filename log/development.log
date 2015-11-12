@@ -51927,3 +51927,129 @@ Started GET "/" for ::1 at 2015-11-12 17:18:40 -0500
 Processing by LessonsController#main as HTML
   Rendered lessons/main.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 439ms (Views: 437.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/raspi" for ::1 at 2015-11-12 17:20:27 -0500
+Processing by LessonsController#raspi as HTML
+  Rendered lessons/raspi.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 599ms (Views: 578.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/checklist.self-6eb21ef6ae7623efed8de7adf8dc61b5ea78c3e14d8cd671e89aa4c51a352dca.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/lessons.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/stylesheet.self-0868bdbf138fca1d72946ee83e43227d5ae68ede5a48a5ad7ab1390e52e6df47.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/tiles.self-cbe9601f5cd34cc015c7381bcfec3121e59f73d0b05bef3750b6e1a4a24172e2.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/video.self-a6e7a53a0b2c8a30c806c966019943917a6551434e530eb2f1b339be1e596473.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/dragndrop.self-a95ca24f4c91fb743108cd8625b33d404a11c2c9c89ce5125d0e35f886391a85.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/jquery.quiz.self-2e1a91fea3e30b87b9a2e321c9d09e3523692e12ae60bac882603589855a45d4.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/lessons.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-12 17:20:28 -0500
+
+
+Started GET "/lessons/dragndrop" for ::1 at 2015-11-12 17:20:32 -0500
+Processing by LessonsController#dragndrop as HTML
+  Rendered lessons/dragndrop.html.erb within layouts/application (135.6ms)
+Completed 200 OK in 349ms (Views: 348.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/setup" for ::1 at 2015-11-12 17:20:38 -0500
+Processing by LessonsController#setup as HTML
+  Rendered lessons/setup.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 390ms (Views: 384.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/setup" for ::1 at 2015-11-12 17:20:39 -0500
+Processing by LessonsController#setup as HTML
+  Rendered lessons/setup.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 213ms (Views: 212.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/materials" for ::1 at 2015-11-12 17:20:43 -0500
+Processing by LessonsController#materials as HTML
+  Rendered lessons/materials.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 237ms (Views: 235.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/lessons/setup" for ::1 at 2015-11-12 17:20:49 -0500
+Processing by LessonsController#setup as HTML
+  Rendered lessons/setup.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 230ms (Views: 228.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-12 17:20:52 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 239ms (Views: 238.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-12 17:20:53 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 188ms (Views: 186.6ms | ActiveRecord: 0.0ms)
