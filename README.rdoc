@@ -6,6 +6,8 @@ Wyncode Final Projects
 
 Date: Nov 19 2015
 
+
+
 SUMMARY:
 
 Amazing Grace aims to be the largest community to get girls interested in science, technology, art, engineering, and math (STEAM) by catering to the needs and interests of girls. Amazing Grace teaches girls about topics in STEAM through tutorials, games, and quizzes that are designed specifically for girls.
