@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Amazing Grace</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Bootstrap Material CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900"
+  type="text/css" rel='stylesheet'>
+  <!-- font-family: 'Bitter' -->
+  <link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet'
+  type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body style="font-family: robotodraft; font-weight: 500;">
+  <!-- NAVBAR START-->
+  <div class="navbar navbar-material-light-blue">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-material-light-blue-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>">Amazing Grace</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-material-light-blue-collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+    </div>
+  </div>
+  <!-- NAVBAR END-->
+  <%= yield %>
+</body>
+</html>

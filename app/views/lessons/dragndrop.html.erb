@@ -1,0 +1,142 @@
+
+  <div class='container'>
+    <div id="shareCon">
+      <div class="alert alert-dismissable alert-material-pink">
+        <button type="button" class="close" data-dismiss="alert">X</button>
+        <strong><p class="congrats">Well Done!</p></strong></a>
+        <p id="share">It took you 00 attempts to build your Pi.</p>
+        <%= link_to 'Back', raspi_lesson_path, class: 'btn btn-info btn-raised back dragndrop' %>
+        <%= link_to 'Next', materials_lesson_path, class: 'btn btn-success btn-raised next dragndrop' %>
+      </div>
+    </div>
+    <div class="panel panel-material-pink dragndrop">
+      <div class="panel-heading">
+        <h3 class="panel-title" style="text-align: center; font-size: 24px;">Build your Raspberry Pi</h3>
+      </div>
+      <div class="panel-body dragndrop">
+        <div id="scoreCon">
+          <div class="instruct">Drag the parts below their corresponding places below.</div>
+          <ul class="nav nav-pills count dragndrop">
+            <li>
+              <div class="score">Correct: <span class="badge" class="numDisp" id="numCorrect">0</span></div>
+            </li>
+            <li>
+              <div class="score"> Attempts: <span class="badge" class="numDisp" id="numAttempts">0</span></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+    <div id="detail">
+      <div id="detailCon">
+        <div id="closebtn">X</div>
+        <div id="photoCon"></div>
+        <div id="desc"></div>
+      </div>
+    </div>
+  </div>
+  <!--DRAGGABLE THINGS-->
+  <!--   <div class="panel panel-default">
+    <div class="panel-body"> -->
+  <div id="partsCon1" class="container" style="width: 65%">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="hdmi">
+        <%= image_tag('hdmi.png') %>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="cameracsi">
+          <%= image_tag('cameracsi.png') %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="individualpart draggable" id="cpugpu">
+          <%= image_tag('cpugpu.png') %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="individualpart draggable" id="displaydsi">
+          <%= image_tag('displaydsi.png') %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="individualpart draggable" id="ethernet">
+          <%= image_tag('ethernet.png') %>
+        </div>
+      </div>
+    </div>
+    <div row="row">
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="usb2">
+          <%= image_tag('usb2.png') %>
+        </div>
+      </div>
+      <div class="col-md-offset-2 col-md-1">
+        <div class="individualpart draggable" id="usbethernetcontroller">
+          <%= image_tag('controller.png') %>
+        </div>
+      </div>
+      <div class="col-md-offset-1 col-md-1">
+        <div class="individualpart draggable" id="videoaudio">
+          <%= image_tag('videoaudio.png') %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="individualpart draggable" id="microusb">
+          <%= image_tag('microusb.png') %>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="individualpart draggable" id="usb">
+          <%= image_tag('usb.png') %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--END DRAGGABLE THINGS-->
+  <div style="clear:both"></div>
+  <div id="detail">
+    <div id="detailCon">
+      <div id="closebtn">X</div>
+      <div id="photoCon"></div>
+      <div id="desc"></div>
+    </div>
+  </div>
+  <!--DROP TARGETS-->
+  <div class="container" id="pi">
+    <div class="droppable" id="usb" data-id="0">
+      <%= image_tag('usbempty.png') %>
+    </div>
+    <div class="droppable" id="usb2" data-id="1">
+      <%= image_tag('usbempty.png') %>
+    </div>
+    <div class="droppable" id="ethernet" data-id="2">
+      <%= image_tag('ethernetempty.png') %>
+    </div>
+    <div class="droppable" id="usbethernetcontroller" data-id="3">
+      <%= image_tag('controllerempty.png') %>
+    </div>
+    <div class="droppable" id="videoaudio" data-id="4">
+      <%= image_tag('videoaudioempty.png') %>
+    </div>
+    <div class="droppable" id="cameracsi" data-id="5">
+      <%= image_tag('cameracsiempty.png') %>
+    </div>
+    <div class="droppable" id="cpugpu" data-id="6">
+      <%= image_tag('cpugpuempty.png') %>
+    </div>
+    <div class="droppable" id="hdmi" data-id="7">
+      <%= image_tag('hdmiempty.png') %>
+    </div>
+    <div class="droppable" id="microusb" data-id="8">
+      <%= image_tag('microusbempty.png') %>
+    </div>
+    <div class="droppable" id="displaydsi" data-id="9">
+      <%= image_tag('displaydsiempty.png') %>
+    </div>
+      <%= image_tag('raspberrypi.png') %>
+  </div>
+  <!--END DROP TARGETS-->
+
