@@ -40,3 +40,14 @@ FEATURES:
 FUTURE GOALS:
   - More Lessons and Tutorials
   - Language Support: Spanish
+
+
+TECHNOLOGY USED:
+  - Ruby on Rails (Amazing Grace Application Framework)
+  - Bcrypt (User Authentication)
+  - Gravatar (User Profile avatars)
+  - JavaScript (To-do Checklist, Multiple Choice Quiz, DragnDrop Game, IDE)
+  - JQuery (Multiple Choice Quiz)
+  - JQuery UI (DragnDrop Game)
+  - Ace JavaScript Library (IDE)
+  - Tag Clouds (Forum)
