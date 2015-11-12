@@ -10,10 +10,10 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
       socialStatus: 'I scored {score}% on this awesome test! Check it out!',
       startText: 'Let\'s get started!',
       endText: 'Finished!',
-      splashImage: './images/start1.png',
-      twitterImage: './images/twitter.png',
-      facebookImage: './images/facebook.png',
-      gPlusImage: './images/googleplus.png',
+      splashImage: "<%= asset_path('start1.png') %>",
+      twitterImage: "<%= asset_path('twitter.png') %>",
+      facebookImage: "<%= asset_path('facebook.png') %>",
+      gPlusImage: "<%= asset_path('googleplus.png') %>",
       shortURL: null,
       addTwitter: true,
       addFacebook: true,
@@ -241,8 +241,8 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
         }
         resultSet += '<div class="result-row"> Question #' + (i + 1) +
           (results[i] === true ?
-            "<div class='correct btn btn-success btn-raised'><span>Correct</span></div>" :
-            "<div class='wrong btn btn-success btn-danger'><span>Incorrect</span></div>"
+            "<div class='correct btn btn-success btn-raised quiz'><span>Correct</span></div>" :
+            "<div class='wrong btn btn-success btn-danger quiz'><span>Incorrect</span></div>"
           );
         resultSet += '<div class="resultsview-qhover">' + config.questions[
           i].question;
@@ -295,8 +295,8 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
         '<div class="jquizzy-clear"></div>' + resultSet +
         '<div class="jquizzy-clear"></div>' +
         '<div class="jquizzy-clear"></div>' +
-        '<a href="javascript:void(0)" class="btn btn-info btn-raised">Back</a>' +
-        '<a href="javascript:void(0)" class="btn btn-success nextbtn btn-raised">Next</a>';
+        '<a href="javascript:void(0)" class="btn btn-info btn-raised quiz">Back</a>' +
+        '<a href="javascript:void(0)" class="btn btn-success nextbtn btn-raised quiz">Next</a>';
       superContainer.find('.result-keeper').html(resultSet).show(
         500);
       superContainer.find('.resultsview-qhover').hide();

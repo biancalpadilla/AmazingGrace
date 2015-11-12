@@ -199,7 +199,7 @@
 }
 
 .main-quiz-holder .resultsview-qhover li.right {
-  background: url(../images/correct.png) no-repeat 5px 2px;
+  background: url("<%= asset_path('correct.png') %>") no-repeat 5px 2px;
 }
 
 .main-quiz-holder .correct,
@@ -269,4 +269,11 @@ body {
 .btn.btn-info.backbtn {
     margin-top: 20px;
     float: left;
+}
+
+.btn.btn-info.btn-raised.quiz {
+
+}
+.btn.btn-success.nextbtn.btn-raised.quiz{
+
 }

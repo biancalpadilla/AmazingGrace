@@ -1,7 +1,6 @@
 ﻿/* Built using a tutorial from: Tutsplus
 https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
-
-(function ($) {
+$(document).on(function ($) {
 
   $.fn.jquizzy = function (settings) {
 
@@ -10,10 +9,10 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
       socialStatus: 'I scored {score}% on this awesome test! Check it out!',
       startText: 'Let\'s get started!',
       endText: 'Finished!',
-      splashImage: './images/start1.png',
-      twitterImage: './images/twitter.png',
-      facebookImage: './images/facebook.png',
-      gPlusImage: './images/googleplus.png',
+      splashImage: "<%= asset_path('start1.png') %>",
+      twitterImage: "<%= asset_path('twitter.png') %>",
+      facebookImage: "<%= asset_path('facebook.png') %>",
+      gPlusImage: "<%= asset_path('googleplus.png') %>",
       shortURL: null,
       addTwitter: true,
       addFacebook: true,
@@ -29,7 +28,6 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
         worst: 'You can do better! Try again.'
       }
 
-
     };
 
     var config = $.extend(defaults, settings);
@@ -44,8 +42,8 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
       answers = [],
       introFob =
       ' <div class="intro-container slide-container"><div class="question-number">' +
-      config.startText + '</div><a class="nav-start" href="#"><img src="' +
-      config.splashImage + '" /></a></div>  ',
+      "<%= config.asset_path(startText) %>" + '</div><a class="nav-start" href="#"><img src="' +
+      "<%= config.asset_path(splashImage) %>"  + '" /></a></div>  ',
       exitFob =
       '<div class="results-container slide-container"><div class="question-number">' +
       config.endText +
