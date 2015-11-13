@@ -4,7 +4,7 @@ AMAZING GRACE
 
 Wyncode Final Projects
 
-Date: Nov 19 2015
+
 
 
 
@@ -40,7 +40,8 @@ FEATURES:
   - Search Feature
 + Leaderboard
   - Users earn points for completing games
-  - Track which user's haave the most points
+  - See which users have the most points
+  
 
 FUTURE GOALS:
   - More Lessons and Tutorials
@@ -56,3 +57,4 @@ TECHNOLOGY USED:
   - JQuery UI (DragnDrop Game)
   - Ace JavaScript Library (IDE)
   - Tag Clouds (Forum)
+  - Bootstrap (CSS - Materials Theme)
