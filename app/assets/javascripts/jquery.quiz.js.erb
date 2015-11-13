@@ -118,6 +118,18 @@ https://code.tutsplus.com/tutorials/build-a-spiffy-quiz-engine--net-20185*/
     }
 
     function judgeSkills(score) {
+      $.ajax({
+          type: "POST",
+          url: "/update_score",
+          data: { score: parseInt(score)},
+          success: function(){
+            console.log('ok');
+          },
+          error: function(){
+            alert('There was an error. Please try again.');
+            //return false;
+          }
+        });
       var returnString;
       if(score === 100)
         return config.resultComments.perfect;
