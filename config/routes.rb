@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'lessons/setup', to: 'lessons#setup', as: 'setup_lesson'
   get 'lessons/code', to: 'lessons#code', as: 'code_lesson'
   get 'lessons/html', to: 'lessons#html', as: 'html_lesson'
-  get 'lessons/leaderboard', to: 'lessons#leaderboard', as: 'leaderboard'
+
+  get 'leaderboard', to: 'lessons#leaderboard', as: 'leaderboard'
 
   # get 'questions#index'
   get 'forum', to: 'questions#index', as: 'forum_questions'

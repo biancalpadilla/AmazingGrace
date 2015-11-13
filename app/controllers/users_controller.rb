@@ -12,12 +12,12 @@ class UsersController < ApplicationController
     score_int = Integer(score)
     current_user.score += score_int
     current_user.save
-
     render :nothing => true
   end
 
   def create
     user = User.new(user_params)
+    user.score = 0
     if user.save
       session[:user_id] = user.id
       redirect_to '/'
