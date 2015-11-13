@@ -1170,6 +1170,7 @@ body {
 }
 .tile-lg .content-wrapper .tile-content .tile-img {
   height: 180px;
+  background-size: 90%, 90%;
 }
 .tile-lg .content-wrapper .tile-content .tile-img-bg {
   width: 550px;
