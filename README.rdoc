@@ -38,6 +38,9 @@ FEATURES:
   - Post Links and Resources
   - Tag features on questions that can redirect students to resources 
   - Search Feature
++ Leaderboard
+  - Users earn points for completing games
+  - Track which user's haave the most points
 
 FUTURE GOALS:
   - More Lessons and Tutorials
