@@ -18,9 +18,28 @@ body {
 }
 
 .navbar .navbar-brand {
-  font-family: 'Bitter', serif;
-  font-size: 35px;
-  padding-left: 50px;
+    margin-top: -18px;
+}
+
+.navbar-brand>img {
+  display: block;
+  height: 278%;
+  padding-top: 3px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tile-lg .content-wrapper .tile-content {
+    height: 270px;
+    padding: 0px;
+}
+
+.tile .content-wrapper .tile-content {
+  height: 130px;
+  padding: 0px;
 }
 
 a {
