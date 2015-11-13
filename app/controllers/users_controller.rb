@@ -7,6 +7,15 @@ class UsersController < ApplicationController
   #   @current_user =  User.find_by(session[user_id])
   # end
 
+  def update_score
+    score = params[:score]
+    score_int = Integer(score)
+    current_user.score += score_int
+    current_user.save
+
+    render :nothing => true
+  end
+
   def create
     user = User.new(user_params)
     if user.save

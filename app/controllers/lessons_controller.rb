@@ -23,4 +23,10 @@ class LessonsController < ApplicationController
 
   def html
   end
+
+  def leaderboard
+    @users = User.all.sort{ |x, y| y.score <=> x.score }
+  end
+
+
 end

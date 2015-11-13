@@ -1,0 +1,19 @@
+<h1>Leaderboard</h1>
+
+<div class="leaderboard-table">
+<% @users.each_with_index do |user, index| %>
+  <%= index + 1 %>
+  <%= user.name %>
+  <%= user.score %>
+  <% end %>
+</div>
+
+<style>
+  .leaderboard-table{
+    background-color: white;
+    font-size: 18px;
+    display: block;
+  }
+</style>
+
+

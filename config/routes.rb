@@ -8,15 +8,17 @@ Rails.application.routes.draw do
   get 'lessons/setup', to: 'lessons#setup', as: 'setup_lesson'
   get 'lessons/code', to: 'lessons#code', as: 'code_lesson'
   get 'lessons/html', to: 'lessons#html', as: 'html_lesson'
+  get 'lessons/leaderboard', to: 'lessons#leaderboard', as: 'leaderboard'
 
   # get 'questions#index'
   get 'forum', to: 'questions#index', as: 'forum_questions'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  get '/signup', to: 'users#new'
+  post '/users', to: 'users#create'
+  post '/update_score', to: 'users#update_score'
   get 'tags/:tag', to: 'questions#index', as: :tag
   # get '/questions/new' => 'questions#new'
   # post '/questions/create' => 'questions#create'
