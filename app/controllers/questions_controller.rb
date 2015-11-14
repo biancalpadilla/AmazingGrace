@@ -12,9 +12,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     if params[:search]
-      @tags = Question.joins(:tags).where("tags.name LIKE ?", "%#{params[:search]}%")
-      @questions = Question.search(params[:search]).order("created_at DESC")
-      @questions = @questions | @tags
+      @questions = Question.joins(:tags).search(params[:search]).order("created_at DESC")
     else
       @questions = Question.all.order('created_at DESC')
       @questions = Question.all
