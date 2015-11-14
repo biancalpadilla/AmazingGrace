@@ -1,41 +1,62 @@
-<% if current_user %>
-  <h5>Hello <%= current_user.name.capitalize %></h5>
-<% else %>
-  <h5>Hello</h5>
-<% end %>
+<div style="font-size: 18px;">
+  <div class="container">
+  <%= link_to "", root_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 39px;" %>
+  </div>
+
+  <!-- this is the search feature -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1" style="padding-top: 15px; margin-left: 93px;">
+        Popular Tags:
+        <% tag_cloud Question.tag_counts, %w[s m l] do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+        <% end %>
+      </div>
+  <!-- this is showing the most popular tags -->
+      <div class="col-md-6 col-md-offset-0" id="tag_cloud">
+        <%= form_tag(forum_questions_path, method: "get") do %>
+        <%= label_tag :search, "Search:", style: "padding-left: 97px;" %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag "Search", class: "btn btn-success btn-raised"  %>
+        <% end %>
+       </div>
+    </div>
+  </div>
 
 
-<!-- this is showing the most popular tags -->
-<div id="tag_cloud">
-  <% tag_cloud Question.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-  <% end %>
+  <div class="container">
+  <div class="panel panel-material-pink" style="margin-left: 89px; width: 85%">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-11">
+          <h1 style="text-align: center;">Questions</h1>
+        </div>
+        <div class="col-md-1" style="margin-top: 17px;">
+          <% if current_user %>
+            <%= link_to '', new_question_path, class: 'mdi-content-add-circle-outline', style: "font-size: 40px; color: white;" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <% @questions.each do |question| %>
+    <ul style="list-style-type: none; padding-top: 20px;">
+      <div class="row">
+        <li>
+          <div class="col-md-9">
+            <%= image_tag avatar_url(question.user, 35), class: "avatargravatar" %> <%=  question.user.name %> - <%= time_ago_in_words(question.created_at) %> ago
+            <h3><%= link_to question.title, question_path(question.id) %></h3>
+            <p>Description: <%= link_to question.description, question_path(question.id) %></p>
+          </div>
+          <div class="col-md-3">
+            Tags: <%= raw question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+          </div>
+        </li>
+      </div>
+      <hr />
+
+    </ul>
+    <% end %>
+  </div>
 </div>
-<!-- this is showing the most popular tags -->
 
-
-<h4>Question feed</h4>
-
-<% @questions.each do |question| %>
-<ul>
-<li><h4><%= link_to question.title, question_path(question.id) %>
-<%= image_tag avatar_url(question.user, 35), class: "avatargravatar" %></h4>
-<p>
-    Tags: <%= raw question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
-</p>
-<% if current_user %>
-  <p>
-    <%= link_to 'answer this question', new_question_answer_path(question) %>
-  </p>
-<% end %>
-</li>
-</ul>
-<% end %>
-
-<% if current_user %>
-  <p>
-    <%= link_to 'add a question', new_question_path %>
-  </p>
-<% end %>
-
-<%= link_to "Back", root_path %>

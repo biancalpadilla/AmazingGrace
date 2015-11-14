@@ -1,41 +1,48 @@
-<h3> Question asked </h3>
-<h4> Title </h4>
-<%= @question.title %>
-<h4> Description </h4>
-<%= @question.description %>
+<div style="font-size: 22px;">
+  <div class="container">
+    <%= link_to "", questions_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 39px;" %>
+</div>
 
-<p>
-    <h4> Tags </h4> <%= raw @question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
-</p>
+<div class="container">
+  <ul style="list-style-type: none; padding-top: 20px;">
+    <li>
+        <h3> Title </h4>
+        <%= @question.title %>
+        <h3> Description </h4>
+        <%= @question.description %>
+        <h4> Tags </h4> <%= raw @question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+        <hr />
+        <h3> Answers </h4>
 
-<h4> Answers </h4>
+    </li>
+  </ul>
+  <ul style="list-style-type: none; padding-top: 20px;">
+    <%  @question.answers.each do |answer| %>
+      <li><%= answer.response %>
+        <%= pluralize(answer.votes.count, "vote") %>
+        <%= link_to "vote".html_safe, question_answer_upvote_path(@question,answer), class: "btn-floating btn-extra-small waves-effect waves-light red", method: :post  %>
+        <% if answer.user == current_user %>
+          <%= link_to "Edit", edit_question_answer_path(@question, answer) %>
+       <% end %>
+        <p>Added by <%= @question.user.name%></p>
+      </li>
+    <% end %>
+  </ul>
 
-<ol>
-<%  @question.answers.each do |answer| %>
-  <li><%= answer.response %>
-    <%= pluralize(answer.votes.count, "vote") %>
-    <%= link_to "<i class='material-icons'>add</i>".html_safe, question_answer_upvote_path(@question,answer), class: "btn-floating btn-extra-small waves-effect waves-light red", method: :post  %>
-    <% if answer.user == current_user %>
-      <%= link_to "Edit", edit_question_answer_path(@question, answer) %>
-   <% end %>
-    <p>Added by <%= @question.user.name%></p>
-    </i></a>
+    <% if @question.user == current_user %>
+    <%= link_to 'Edit', edit_question_path %>
+    <%= link_to "Delete", @question, method: "delete" %>
+    <% end %>
 
- </li>
-<% end %>
-</ol>
-<p>
-<p>
-<% if @question.user == current_user %>
-<%= link_to 'Edit', edit_question_path %>
-<%= link_to "Delete", @question, method: "delete" %>
-<% end %>
+    <% if current_user %>
+    <%= link_to 'Add a new answer for this question', new_question_answer_path(@question), class: "btn" %>
+    <% end %>
 
-<% if current_user %>
-<%= link_to 'Add a new answer for this question', new_question_answer_path(@question) %>
-<% end %>
-</p>
-</p>
+    </div>
+    <hr />
 
-<%= link_to "Back", questions_path %>
+    </ul>
+  </div>
+</div>
 
+</div>
