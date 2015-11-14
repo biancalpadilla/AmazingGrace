@@ -1,14 +1,36 @@
 class QuestionsController < ApplicationController
 
+  # def index
+  #   @questions = Question.all
+  #   if params[:search]
+  #   @questions = Question.search(params[:search]).order("created_at DESC")
+  #   else
+  #   @questions = Question.all.order('created_at DESC')
+  #   end
+  # end
+
   def index
-    if params[:tag]
-      @questions = Question.tagged_with(params[:tag])
-      @user = current_user
+    @questions = Question.all
+    if params[:search]
+      @tags = Question.joins(:tags).where("tags.name LIKE ?", "%#{params[:search]}%")
+      @questions = Question.search(params[:search]).order("created_at DESC")
+      @questions = @questions | @tags
     else
+      @questions = Question.all.order('created_at DESC')
       @questions = Question.all
       @user = current_user
     end
   end
+
+  # def index
+  #   if params[:tag]
+  #     @questions = Question.tagged_with(params[:tag])
+  #     @user = current_user
+  #   else
+  #     @questions = Question.all
+  #     @user = current_user
+  #   end
+  # end
 
   def new
     @question = Question.new

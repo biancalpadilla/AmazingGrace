@@ -23,4 +23,7 @@ class Question < ActiveRecord::Base
       end
     end
 
+  def self.search(search)
+    where("title like :search or description like :search ", {:search => "%#{search}%" })
+  end
 end

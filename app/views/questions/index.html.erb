@@ -4,6 +4,15 @@
   <h5>Hello</h5>
 <% end %>
 
+<!-- this is the search feature -->
+
+<%= form_tag(forum_questions_path, method: "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+
 
 <!-- this is showing the most popular tags -->
 <div id="tag_cloud">
@@ -25,7 +34,7 @@
 </p>
 <% if current_user %>
   <p>
-    <%= link_to 'answer this question', new_question_answer_path(question) %>
+    <%= link_to 'Add an answer', new_question_answer_path(question) %>
   </p>
 <% end %>
 </li>
@@ -34,7 +43,7 @@
 
 <% if current_user %>
   <p>
-    <%= link_to 'add a question', new_question_path %>
+    <%= link_to 'Add a question', new_question_path %>
   </p>
 <% end %>
 
