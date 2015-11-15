@@ -5,30 +5,36 @@
     <div class="panel-body checklist">
         <p class="video">
           <input id="question1" name="question1" type="checkbox" value="1">
-          <label>Required Components</label>
+          <label>Raspberry Pi set up</label>
           <p class="video">We recommend you follow our instructions on setting up your <a class="video" href="<%= setup_lesson_path %>"
-            target="_blank">Raspberry Pi</a> if you have not already.
-            NOOBS pre-installed, or you can download it for free from our <a class="video" href="https://www.raspberrypi.org/downloads/"
-            target="_blank">downloads</a> page.</p>
+            target="_blank">Raspberry Pi</a> if you have not already. If you have questions or trouble setting your Raspberry Pi up
+            just visit our forums and ask a question.
+          </p>
         </p>
+        <br></br>
         <p class="video">
           <input id="question2" name="question2" type="checkbox" value="1">
-          <label><strong>Display and connectivity cables</strong></label>
-          <p class="video">Any HDMI/DVI monitor or TV should work as a display for the Pi . For best
-            results, use one with HDMI input, but other connections are available
-            for older devices. Use a standard Ethernet cable for internet access.</p>
+          <label><strong>Required Components</strong></label>
+          <p class="video">Before we get started make sure you have the follow components ready:
+            <ul>
+            <li><a href="https://www.sparkfun.com/products/9590">Simple LED of any color. </a></li>
+            <li><a href="https://www.sparkfun.com/products/8377">Resistor 330Ω 1/6th Watt.  </a></li>
+            <li><a href="https://www.sparkfun.com/products/9140">A couple jumper wires.  </a></li>
+            <li><a href="https://www.sparkfun.com/products/12046">A small breadboard.  </a></li>
+          </ul>
+          </p>
         </p>
+        <br></br>
         <p class="video">
           <input id="question3" name="question3" type="checkbox" value="1">
-          <label><strong>Keyboard and mouse</strong></label>
-          <p class="video">Any standard USB keyboard and mouse will work with your Raspberry Pi.</p>
+          <label><strong>Twitter set up</strong></label>
+          <p class="video">If you do not have a Twitter account visit <a href="https://twitter.com/">https://twitter.com/</a> and set one up. Once your account is set go to <a href="https://dev.twitter.com/">https://dev.twitter.com/</a> to set up a developer account.</p>
         </p>
+        <br></br>
         <p class="video">
           <input id="question4" name="question4" type="checkbox" value="1">
-          <label> <strong>Power Supply</strong></label>
-          <p class="video">Use a 5V micro USB power supply to power your Raspberry Pi. Be careful
-            that whatever power supply you use outputs at least 5V; insufficient
-            power will cause your Pi to behave in strange ways.</p>
+          <label> <strong>Set up a Twitter application</strong></label>
+          <p class="video">Click the “Create a new application” button, and you will be presented with a form to fill out about your application. Fill out the name and description fields. For “Website,” you can put something random, like http://github.com or something else that looks legitimate. At the bottom of the page, click the checkbox to agree to the rules, fill out the Captcha, and click the “Create your Twitter application” button.</p>
         </p>
         <hr />
         <a href="<%= dragndrop_lesson_path %>" class="btn btn-info back">Back</a>
