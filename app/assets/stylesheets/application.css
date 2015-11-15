@@ -14,3 +14,12 @@
  *= require_self
  */
 
+.log-in {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.sign-up {
+   margin: 0 auto;
+   width: 600px;
+}
