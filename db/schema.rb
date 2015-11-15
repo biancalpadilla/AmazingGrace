@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151113003213) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.text     "response"
     t.integer  "question_id"
@@ -21,8 +24,8 @@ ActiveRecord::Schema.define(version: 20151113003213) do
     t.integer  "user_id"
   end
 
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
-  add_index "answers", ["user_id"], name: "index_answers_on_user_id"
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.string   "title"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151113003213) do
     t.integer  "user_id"
   end
 
-  add_index "questions", ["user_id"], name: "index_questions_on_user_id"
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
@@ -41,8 +44,8 @@ ActiveRecord::Schema.define(version: 20151113003213) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "taggings", ["question_id"], name: "index_taggings_on_question_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["question_id"], name: "index_taggings_on_question_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -66,4 +69,9 @@ ActiveRecord::Schema.define(version: 20151113003213) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
+  add_foreign_key "questions", "users"
+  add_foreign_key "taggings", "questions"
+  add_foreign_key "taggings", "tags"
 end
