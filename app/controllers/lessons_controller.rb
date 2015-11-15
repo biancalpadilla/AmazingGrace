@@ -28,5 +28,7 @@ class LessonsController < ApplicationController
     @users = User.all.sort{ |x, y| y.score <=> x.score }
   end
 
+  def tweetmonitor
+  end
 
 end
