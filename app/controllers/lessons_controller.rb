@@ -30,8 +30,11 @@ class LessonsController < ApplicationController
 
   def tweetmonitor
   end
-  
+
   def tweetmonitor2
+  end
+
+  def tweetmonitor3
   end
 
 end

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'lessons/code', to: 'lessons#code', as: 'code_lesson'
   get 'lessons/html', to: 'lessons#html', as: 'html_lesson'
   get 'lessons/tweetmonitor', to: 'lessons#tweetmonitor', as: 'tweetmonitor_lesson'
+  get 'lessons/tweetmonitor2', to: 'lessons#tweetmonitor2', as: 'tweetmonitor2_lesson'
+  get 'lessons/tweetmonitor3', to: 'lessons#tweetmonitor3', as: 'tweetmonitor3_lesson'
 
   get 'leaderboard', to: 'lessons#leaderboard', as: 'leaderboard'
 
