@@ -20,7 +20,8 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to question_path(@question), notice:"Your answer #{@answer.response} for this question was saved"
     else
-      redirect_to '/answers/new'
+      @errors = @answer.errors
+      render '/answers/new'
     end
   end
 
