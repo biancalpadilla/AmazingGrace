@@ -34,3 +34,6 @@ a:focus {
   padding-left: 62px
 }
 
+a.next.checklist.tweet {
+  margin-top: 0;
+}
