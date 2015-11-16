@@ -32311,3 +32311,684 @@ Processing by LessonsController#main as HTML
   Rendered lessons/main.html.erb within layouts/application (0.6ms)
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 178ms (Views: 177.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 11:07:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 1684ms (Views: 1668.8ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:07:27 -0500
+
+
+Started GET "/forum" for ::1 at 2015-11-16 11:07:30 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.7ms)[0m  SELECT tags.id, tags.name,count(taggings.tag_id) as count FROM "tags" INNER JOIN "taggings" ON "taggings"."tag_id" = "tags"."id" GROUP BY taggings.tag_id, tags.id, tags.name
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (72.8ms)
+Completed 200 OK in 265ms (Views: 248.5ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:07:39 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (1.1ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 219ms (Views: 211.1ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:08:51 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.2ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 191ms (Views: 188.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/application.self-48c11aa83fd191b335832152059438e14128e69c67d4f284ed037f5e6f523b8e.css?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 11:08:51 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 11:08:52 -0500
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:11:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 572ms (Views: 519.6ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 11:11:53 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/application.self-48c11aa83fd191b335832152059438e14128e69c67d4f284ed037f5e6f523b8e.css?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 11:11:54 -0500
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:12:11 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 209ms (Views: 205.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/application.self-48c11aa83fd191b335832152059438e14128e69c67d4f284ed037f5e6f523b8e.css?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 11:12:11 -0500
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:14:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.5ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (87.2ms)
+Completed 200 OK in 552ms (Views: 503.9ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:14:55 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 186ms (Views: 182.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/application.self-48c11aa83fd191b335832152059438e14128e69c67d4f284ed037f5e6f523b8e.css?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 11:14:55 -0500
+
+
+Started GET "/questions/1" for ::1 at 2015-11-16 11:15:29 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mAnswer Load (0.3ms)[0m  SELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1  [["question_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."answer_id" = $1[0m  [["answer_id", 1]]
+  Rendered questions/show.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 187ms (Views: 183.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/application.self-48c11aa83fd191b335832152059438e14128e69c67d4f284ed037f5e6f523b8e.css?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 11:15:29 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 11:15:30 -0500
