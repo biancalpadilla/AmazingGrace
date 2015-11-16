@@ -32311,3 +32311,130 @@ Processing by LessonsController#main as HTML
   Rendered lessons/main.html.erb within layouts/application (0.6ms)
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 178ms (Views: 177.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 11:15:23 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 1393ms (Views: 1372.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 11:15:25 -0500
+
+
+Started GET "/code" for ::1 at 2015-11-16 11:15:31 -0500
+
+ActionController::RoutingError (No route matches [GET] "/code"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (127.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (73.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (154.1ms)
+
+
+Started GET "/lessons/code" for ::1 at 2015-11-16 11:15:36 -0500
+Processing by LessonsController#code as HTML
+  Rendered lessons/code.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 269ms (Views: 267.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 11:16:13 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 358ms (Views: 356.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 11:17:19 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (3.5ms)[0m  SELECT tags.id, tags.name,count(taggings.tag_id) as count FROM "tags" INNER JOIN "taggings" ON "taggings"."tag_id" = "tags"."id" GROUP BY taggings.tag_id, tags.id, tags.name
+  [1m[36mQuestion Load (1.1ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 307ms (Views: 287.7ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 11:17:21 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 229ms (Views: 227.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/leaderboard" for ::1 at 2015-11-16 11:17:22 -0500
+Processing by LessonsController#leaderboard as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered lessons/leaderboard.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 261ms (Views: 259.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 11:17:25 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 204ms (Views: 203.2ms | ActiveRecord: 0.3ms)
