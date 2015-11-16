@@ -1,17 +1,19 @@
-<!--
 
-<%= form_for [@question, @answer] do |f| %>
-<p>
-  <%= f.label  :response %>
-  <%= f.text_field :response %>
-</p>
-<p>
-  <%= f.submit %>
-
-</p>
+ <% if @errors %>
+<div class="panel panel-danger question-save">
+    <div class="panel-heading">
+        <h3 class="panel-title">Couldn't save answer</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <% @errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+</div>
 <% end %>
-<%= link_to "Back", question_path(@question) %>
- -->
+
 <div class="panel panel-info new-question">
   <div class="panel-heading">
     <h2 class="panel-title"><strong>Add a new answer</strong></h2>
