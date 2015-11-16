@@ -3,6 +3,8 @@ class Question < ActiveRecord::Base
   belongs_to :user
   has_many :taggings
   has_many :tags, through: :taggings, dependent: :destroy
+  validates :title, presence: true
+  validates :description, presence: true
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).questions

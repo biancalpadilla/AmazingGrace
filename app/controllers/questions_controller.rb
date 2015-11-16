@@ -49,7 +49,8 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to question_path(@question.id), notice:"your question #{@question.title} was sucessfully created"
     else
-      redirect_to '/questions/new'
+      @errors = @question.errors
+      render '/questions/new'
     end
   end
 

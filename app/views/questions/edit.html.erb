@@ -1,4 +1,4 @@
-
+<!--
 <%= form_for @question do |f| %>
 <p>
   <%= f.label  :title %>
@@ -13,4 +13,39 @@
 </p>
 <% end %>
 <%= link_to "Back", question_path(@question) %>
+ -->
 
+<div class="panel panel-info new-question">
+  <div class="panel-heading">
+    <h2 class="panel-title"><strong>Edit your question</strong></h2>
+  </div>
+  <div class="panel-body">
+    <%= form_for @question, class: "form-horizontal" do |f| %>
+
+    <div class="form-group">
+      <label for="title" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <%= f.text_field :title ,class: "form-control"%>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <%= f.text_field :description ,class: "form-control"%>
+      </div>
+    </div>
+
+    <%= button_tag class: "btn btn-material-pink btn-raised pull-right" do %>
+        Edit your question
+      <div class="ripple-wrapper">
+      </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
+
+<div style="font-size: 22px;">
+  <div class="container">
+    <%= link_to "", questions_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 15px;" %>
+</div>
