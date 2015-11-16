@@ -1,43 +1,43 @@
   <div class="panel panel-material-pink checklist">
     <div class="panel-heading checklist">
-      <h3 class="panel-title" style="text-align: center; font-size: 24px;">Raspberry Pi<br>Twitter Monitor<br>Step 2</h3>
+      <h3 class="panel-title" style="text-align: center; font-size: 24px;">Raspberry Pi<br>Twitter Monitor<br>Step 3</h3>
     </div>
     <div class="panel-body checklist">
         <p class="video">
           <input id="question1" name="question1" type="checkbox" value="1">
-          <label>Twitter Token</label>
-          <p class="video">Once completed, you will be presented with a dashboard for your registered application. You need to create an access token, so click the “Create my access token” button at the bottom of the screen.
-          </p>
-        </p>
-        <br></br>
-        <p class="video">
-          <input id="question2" name="question2" type="checkbox" value="1">
-          <label><strong>Consumer key and secret</strong></label>
-          <p class="video">Wait a few seconds and then refresh the page. You should see a section titled “Your access token” at the bottom. Copy down the “Consumer key,” “Consumer secret,” “Access token,” and “Access token secret.” We will need these for our application.
-          </p>
-        </p>
-        <br></br>
-        <p class="video">
-          <input id="question3" name="question3" type="checkbox" value="1">
-          <label><strong>Twython and Pip</strong></label>
-          <p class="video">Boot up your Pi and connect to the Internet (Ethernet, WiFi, etc.). If you use the X Windows interface, open up a console window and install Twython:
+          <label>Add your tokens</label>
+          <p class="video"> Now it is time to add your tokens to the model. Open the file you downloaded to your deasktop. In that file you need to input the following values form your twitter account:
             <ul>
-              <li> sudo apt-get update</li>
-              <li> sudo apt-get install python-pip</li>
-              <li> sudo pip install twython</li>
-
+              <li> APP_KEY</li>
+              <li> APP_SECRET</li>
+              <li> OAUTH_TOKEN</li>
+              <li> OAUTH_TOKEN_SECRET</li>
             </ul>
           </p>
         </p>
         <br></br>
         <p class="video">
+          <input id="question2" name="question2" type="checkbox" value="1">
+          <label><strong>Hardware Hookup</strong></label>
+          <p class="video">Once that is done you can wire up your components based on this <a href="https://cdn.sparkfun.com/r/600-600/assets/e/1/4/c/a/528bd59d757b7f65548b4567.png">model</a>.
+          </p>
+        </p>
+        <br></br>
+        <p class="video">
+          <input id="question3" name="question3" type="checkbox" value="1">
+          <label><strong>Finish!</strong></label>
+          <p class="video"> Once eveything is connected correctly you can open the terminal and type "sudo python TweetBlinky.py". This will run your application! Once someone uses #yes your LED will blink and you should see the tweet!
+          </p>
+        </p>
+        <br></br>
+        <p class="video">
           <input id="question4" name="question4" type="checkbox" value="1">
-          <label> <strong>Python Script</strong></label>
-          <p class="video">Download the following <a href="https://cdn.sparkfun.com/assets/e/f/7/d/6/5293c025ce395f30678b4567.zip">script</a> and save it to your Raspberry Pi's desktop.</p>
+          <label> <strong>Tweaking</strong></label>
+          <p class="video">Now that you have your twitter monitor up and running you can play with the hash tag and see what other tweets you can see!</p>
         </p>
         <hr />
         <a href="<%= tweetmonitor2_lesson_path %>" class="btn btn-info back">Back</a>
-        <a href="<%= tweetmonitor2_lesson_path %>" class="next checklist"><input class="btn btn-success next_button checklist" name="commit" type="submit" value="Next" disabled=""></a>
+        <a href="<%= root_path %>" class="next checklist"><input class="btn btn-success next_button checklist" name="commit" type="submit" value="Next" disabled=""></a>
       </form>
     </div>
   </div>
