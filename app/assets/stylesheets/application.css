@@ -14,3 +14,28 @@
  *= require_self
  */
 
+.log-in {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.sign-up {
+   margin: 0 auto;
+   width: 600px;
+}
+
+.new-question {
+   margin: 0 auto;
+   width: 800px;
+}
+
+
+.show-question {
+   margin: 0 auto;
+   width: 900px;
+}
+
+.questions-answers-hr{
+  border-color: pink;
+}
+

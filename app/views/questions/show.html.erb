@@ -1,3 +1,4 @@
+<!-- <div class="well">
 <div style="font-size: 22px;">
   <div class="container">
     <%= link_to "", questions_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 39px;" %>
@@ -36,6 +37,61 @@
 
     <% if current_user %>
     <%= link_to 'Add a new answer for this question', new_question_answer_path(@question), class: "btn" %>
+    <% end %>
+
+    </div>
+    <hr />
+
+    </ul>
+  </div>
+</div>
+
+</div> -->
+
+
+<div style="font-size: 22px;">
+  <div class="container">
+    <%= link_to "", questions_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 15px;" %>
+</div>
+
+<div class="well show-question">
+  <ul style="list-style-type: none; padding-top: 20px;">
+    <li>
+        <h2><strong>Question</strong></h2>
+        <% if @question.user == current_user %>
+          <%= link_to 'Edit', edit_question_path %>
+         <%= link_to 'Delete', @question, method: "delete" %>
+        <% end %>
+        <p><strong><h5>Added by <%= @question.user.name%></h5></strong></p>
+        <h4><strong> Title </strong></h4>
+          <h5><%= @question.title %></h5>
+        <h4><strong> Description </strong></h4>
+          <h5><%= @question.description %></h5>
+        <h4><strong> Tags </strong></h4>
+          <h5><%= raw @question.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></h5>
+        <hr class="questions-answers-hr">
+        <h2><strong> Answers </strong></h2>
+
+    </li>
+  </ul>
+  <ul style="list-style-type: none; padding-top: 20px;">
+    <%  @question.answers.each do |answer| %>
+      <p><strong><h5><%= answer.user.name.capitalize%>'s reply</h5></strong></p>
+      <li><h4><%= answer.response %>
+        <%= link_to "".html_safe, question_answer_upvote_path(@question,answer), class: "mdi-social-plus-one", method: :post  %></h4>
+        <% if answer.user == current_user %>
+          <p><h5><%= link_to "Edit", edit_question_answer_path(@question, answer) %></h5></p>
+       <% end %>
+        <p><h5><%= pluralize(answer.votes.count, "Vote") %></h5></p>
+        <hr>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+    <% if current_user %>
+    <%= link_to 'Add a new answer for this question', new_question_answer_path(@question), class: "mdi-content-add pull-right" %>
     <% end %>
 
     </div>
