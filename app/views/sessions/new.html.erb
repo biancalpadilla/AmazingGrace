@@ -1,9 +1,34 @@
-<h1>Login</h1>
 
-<%= form_tag '/login' do %>
+<div class="panel panel-info log-in">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login</h3>
+  </div>
+  <div class="panel-body">
+    <%= form_tag '/login', class: "form-horizontal" do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+    <div class="form-group">
+      <label for="email" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <%= text_field_tag :email,nil ,class: "form-control"%>
+      </div>
+    </div>
 
-<% end %>
+    <div class="form-group">
+      <label for="password" class="col-lg-2 control-label">     Password
+      </label>
+      <div class="col-lg-10">
+        <%= password_field_tag :password,nil, class: "form-control" %>
+      </div>
+    </div>
+
+    <%= button_tag class: "btn btn-info btn-raised" do %>
+        submit
+      <div class="ripple-wrapper">
+      </div>
+    <% end %>
+
+
+  </div>
+  <% end %>
+</div>
+
