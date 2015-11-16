@@ -59,8 +59,8 @@
     <li>
         <h2><strong>Question</strong></h2>
         <% if @question.user == current_user %>
-          <%= link_to 'Edit', edit_question_path %>
-         <%= link_to 'Delete', @question, method: "delete" %>
+          <h5><%= link_to 'Edit', edit_question_path %>
+         <%= link_to 'Delete', @question, method: "delete" %></h5>
         <% end %>
         <p><strong><h5>Added by <%= @question.user.name%></h5></strong></p>
         <h4><strong> Title </strong></h4>
@@ -91,7 +91,9 @@
 
 
     <% if current_user %>
-    <%= link_to 'Add a new answer for this question', new_question_answer_path(@question), class: "mdi-content-add pull-right" %>
+    <div class="text-center">
+    <%= link_to 'Add a new answer for this question', new_question_answer_path(@question), class: "mdi-content-add" %>
+    </div>
     <% end %>
 
     </div>
