@@ -56,5 +56,4 @@ TECHNOLOGY USED:
   - JQuery (Multiple Choice Quiz)
   - JQuery UI (DragnDrop Game)
   - Ace JavaScript Library (IDE)
-  - Tag Clouds (Forum)
   - Bootstrap (CSS - Materials Theme)
