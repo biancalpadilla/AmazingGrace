@@ -30,7 +30,7 @@
     <div class="navbar-collapse collapse navbar-material-light-blue-collapse">
       <ul class="nav navbar-nav">
         <% if current_user %>
-          <li><a href="<%= root_path %>"><%= current_user.name.capitalize %></a></li>
+          <li><a href="<%= root_path %>"><%= current_user.name.split.map(&:capitalize).join(' ') %></a></li>
           <li><a href="/leaderboard">Score: <%= current_user.score ||= 0 %></a></li>
           <li><a href="/logout">Log Out</a></li>
           <% else %>
