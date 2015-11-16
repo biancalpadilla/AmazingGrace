@@ -3,17 +3,19 @@
   <%= link_to "", root_path, class: 'mdi-navigation-chevron-left', style: "font-size: 65px; padding-left: 39px;" %>
   </div>
 
-  <!-- this is the search feature -->
+  <!-- this is showing the most popular tags -->
+
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-md-offset-1" style="padding-top: 15px; margin-left: 93px;">
+      <div class="col-md-5 col-md-offset-1" style="padding-top: 15px; margin-left: 93px;" id="tag_cloud">
         Popular Tags:
         <% tag_cloud Question.tag_counts, %w[s m l] do |tag, css_class| %>
           <%= link_to tag.name, tag_path(tag.name), class: css_class %>
         <% end %>
       </div>
-  <!-- this is showing the most popular tags -->
-      <div class="col-md-6 col-md-offset-0" id="tag_cloud">
+
+  <!-- this is the search feature -->
+      <div class="col-md-6 col-md-offset-0">
         <%= form_tag(forum_questions_path, method: "get") do %>
         <%= label_tag :search, "Search:", style: "padding-left: 97px;" %>
         <%= text_field_tag(:search, params[:search]) %>
@@ -59,4 +61,5 @@
     <% end %>
   </div>
 </div>
+
 

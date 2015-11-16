@@ -4,9 +4,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def current_user
-  #   @current_user =  User.find_by(session[user_id])
-  # end
 
   def update_score
     score = params[:score]
