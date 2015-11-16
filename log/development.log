@@ -30251,4 +30251,231 @@ Started GET "/" for ::1 at 2015-11-15 20:20:48 -0500
 Processing by LessonsController#main as HTML
   Rendered lessons/main.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 165ms (Views: 164.3ms | ActiveRecord: 0.0ms)
+<<<<<<< HEAD
 >>>>>>> 2fc269c4187b99abb00309808432ce2124664c4c
+=======
+
+
+Started GET "/signup" for ::1 at 2015-11-15 20:27:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 618ms (Views: 585.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/checklist.self-6eb21ef6ae7623efed8de7adf8dc61b5ea78c3e14d8cd671e89aa4c51a352dca.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/stylesheet.self-2724167d2de7c585ae092a92bf8808e6a81803ee8734e4aa46257e24e179c1a0.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/tiles.self-39a294288b6fbd004557e0436f6a606354a13a0f328b19013acc0920891016b6.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/application.self-22ec9064413d58f60cfb04ffa9a8c7076a340cf58422358d1d656a3974761e4f.css?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/dragndrop.self-a95ca24f4c91fb743108cd8625b33d404a11c2c9c89ce5125d0e35f886391a85.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/jquery.quiz.self-631bf9bd61030c9ea453a88c884c03b335beef3b7f2c8ca0991adc5d37373207.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-15 20:27:36 -0500
+
+
+Started GET "/assets/material-fullpalette.min.css.map" for ::1 at 2015-11-15 20:27:59 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/material-fullpalette.min.css.map"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/Cellar/ruby/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (136.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (93.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (191.9ms)
+
+
+Started GET "/signup" for ::1 at 2015-11-15 20:28:15 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 171ms (Views: 170.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-15 20:28:17 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 181ms (Views: 180.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2015-11-15 20:28:18 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ylDsXaorpkDGLJZz4ZpmgOz2Hnio6w4lZC8Vo+2Vj3ICb7QQdn2OSHJVZYf7NeHZ4bW46xYVmRwhOy6QSchqwg==", "email"=>"bianca@gmail.com", "password"=>"[FILTERED]", "button"=>""}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "bianca@gmail.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 23ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/login" for ::1 at 2015-11-15 20:28:18 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 187ms (Views: 185.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-11-15 20:28:24 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 163ms (Views: 162.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/leaderboard" for ::1 at 2015-11-15 20:28:27 -0500
+Processing by LessonsController#leaderboard as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered lessons/leaderboard.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 179ms (Views: 177.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-11-15 20:28:28 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 163ms (Views: 162.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-15 20:28:29 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mTag Load (2.3ms)[0m  SELECT tags.id, tags.name,count(taggings.tag_id) as count FROM "tags" INNER JOIN "taggings" ON "taggings"."tag_id" = "tags"."id" GROUP BY taggings.tag_id, tags.id, tags.name
+  [1m[36mQuestion Load (0.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  Rendered questions/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 252ms (Views: 233.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/" for ::1 at 2015-11-15 20:28:37 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 156ms (Views: 155.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/leaderboard" for ::1 at 2015-11-15 20:28:41 -0500
+Processing by LessonsController#leaderboard as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered lessons/leaderboard.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 176ms (Views: 173.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-11-15 20:28:43 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 157ms (Views: 156.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-11-15 20:28:47 -0500
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 157ms (Views: 156.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-11-15 20:29:05 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JGRkGSDKs3c7WQrnPD+L/edUPRrdIpOWDlbok1mZ7NLsWzxU/Jybf48g+RMmkAyk6hebiWPcBK9LQtOg/cQJYg==", "user"=>{"name"=>"bianca", "email"=>"biancalpadilla@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "button"=>""}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "score", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "bianca"], ["email", "biancalpadilla@gmail.com"], ["password_digest", "$2a$10$bZUNzFa5xVHpjMWiYL0nU.GYCcIk3xPcUllBLOrNjL9MscJDzhmG."], ["score", 0], ["created_at", "2015-11-16 01:29:05.124590"], ["updated_at", "2015-11-16 01:29:05.124590"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 92ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2015-11-15 20:29:05 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.8ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 168ms (Views: 166.9ms | ActiveRecord: 0.4ms)
+>>>>>>> 5d93d28fb5fea16c2a8a30aebb372b3c14b53fb9

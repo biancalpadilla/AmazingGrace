@@ -46,7 +46,7 @@
       <div class="row">
         <li>
           <div class="col-md-9">
-            <%= image_tag avatar_url(question.user, 35), class: "avatargravatar" %> <%=  question.user.name %> - <%= time_ago_in_words(question.created_at) %> ago
+            <%= image_tag avatar_url(question.user, 35), class: "avatargravatar" %> <%=  question.user.name.capitalize %> - <%= time_ago_in_words(question.created_at) %> ago
             <h3><%= link_to question.title, question_path(question.id) %></h3>
             <p>Description: <%= link_to question.description, question_path(question.id) %></p>
           </div>
