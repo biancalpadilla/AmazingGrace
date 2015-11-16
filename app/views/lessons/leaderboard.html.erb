@@ -8,7 +8,7 @@
       <thead>
         <tr>
           <th style="text-align: center;">#</th>
-          <th style="text-align: center;">Name</th>
+          <th style="text-align: center;">User Name</th>
           <th style="text-align: center;">Score</th>
         </tr>
       </thead>
@@ -16,7 +16,7 @@
         <% @users.each_with_index do |user, index| %>
         <tr>
           <td><%= index + 1 %></td>
-          <td><%= user.name.capitalize %></td>
+          <td><%= image_tag avatar_url(user, 35), class: "avatargravatar" %>&nbsp;&nbsp;&nbsp;<%= user.name.capitalize %></td>
           <td><%= user.score %></td>
         </tr>
         <% end %>
