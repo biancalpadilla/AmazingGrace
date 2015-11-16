@@ -40825,3 +40825,27 @@ Processing by QuestionsController#index as HTML
 Completed 200 OK in 232ms (Views: 222.8ms | ActiveRecord: 6.1ms)
 >>>>>>> dc28988a49b90797887492fd50c10546da571e0a
 >>>>>>> d4e9db609160c9cbc326d09b969eddbf15ef4300
+
+
+Started GET "/" for ::1 at 2015-11-16 18:30:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (3.9ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 200 OK in 2513ms (Views: 2496.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 18:30:40 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 18:30:40 -0500
+
+
+Started GET "/forum" for ::1 at 2015-11-16 18:30:43 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mQuestion Load (1.4ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 285ms (Views: 266.5ms | ActiveRecord: 8.1ms)
