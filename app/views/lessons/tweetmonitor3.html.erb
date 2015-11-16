@@ -1,0 +1,43 @@
+  <div class="panel panel-material-pink checklist">
+    <div class="panel-heading checklist">
+      <h3 class="panel-title" style="text-align: center; font-size: 24px;">Raspberry Pi<br>Twitter Monitor<br>Step 2</h3>
+    </div>
+    <div class="panel-body checklist">
+        <p class="video">
+          <input id="question1" name="question1" type="checkbox" value="1">
+          <label>Twitter Token</label>
+          <p class="video">Once completed, you will be presented with a dashboard for your registered application. You need to create an access token, so click the “Create my access token” button at the bottom of the screen.
+          </p>
+        </p>
+        <br></br>
+        <p class="video">
+          <input id="question2" name="question2" type="checkbox" value="1">
+          <label><strong>Consumer key and secret</strong></label>
+          <p class="video">Wait a few seconds and then refresh the page. You should see a section titled “Your access token” at the bottom. Copy down the “Consumer key,” “Consumer secret,” “Access token,” and “Access token secret.” We will need these for our application.
+          </p>
+        </p>
+        <br></br>
+        <p class="video">
+          <input id="question3" name="question3" type="checkbox" value="1">
+          <label><strong>Twython and Pip</strong></label>
+          <p class="video">Boot up your Pi and connect to the Internet (Ethernet, WiFi, etc.). If you use the X Windows interface, open up a console window and install Twython:
+            <ul>
+              <li> sudo apt-get update</li>
+              <li> sudo apt-get install python-pip</li>
+              <li> sudo pip install twython</li>
+
+            </ul>
+          </p>
+        </p>
+        <br></br>
+        <p class="video">
+          <input id="question4" name="question4" type="checkbox" value="1">
+          <label> <strong>Python Script</strong></label>
+          <p class="video">Download the following <a href="https://cdn.sparkfun.com/assets/e/f/7/d/6/5293c025ce395f30678b4567.zip">script</a> and save it to your Raspberry Pi's desktop.</p>
+        </p>
+        <hr />
+        <a href="<%= tweetmonitor2_lesson_path %>" class="btn btn-info back">Back</a>
+        <a href="<%= tweetmonitor2_lesson_path %>" class="next checklist"><input class="btn btn-success next_button checklist" name="commit" type="submit" value="Next" disabled=""></a>
+      </form>
+    </div>
+  </div>
