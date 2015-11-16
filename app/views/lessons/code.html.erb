@@ -1,1 +1,86 @@
-<h1 style="text-align:center;">IDE coming online soon...</h1>
+<!doctype html>
+<!--[if lt IE 7]><html class="ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<!-- <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>tmpltr</title>
+	<meta name="description" content="tmpltr is a jsFiddle clone for realtime JSON templating and CSS editing.">
+	<meta name="author" content="Tomm!">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="./style.css" type="text/css">
+	<link rel="stylesheet" href="side.css" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> -->
+
+<!-- </head> -->
+
+<body class="loading" id="body" role="split">
+<!--  -->
+<div>
+			 <!-- Sidebar -->
+			 <!-- <div class= "sidebox" id="sidebox">
+			         <span>
+								 Random text goes here im not sure how much text can fir in this area? Will it overlap anything?
+							 </span>
+			     </div> -->
+<!--  -->
+
+
+<div id="contenthere">
+	<nav id="nav">
+		<strong>View:</strong>
+		<label for="inpViewSplit">
+			<input type="radio" name="inpView" class="inpView" id="inpViewSplit" checked="checked" value="split" />
+			Split
+		</label>
+		<label for="inpViewEdit">
+			<input type="radio" name="inpView" class="inpView" id="inpViewEdit" value="edit" />
+			Edit
+		</label>
+		<label for="inpViewResult">
+			<input type="radio" name="inpView" class="inpView" id="inpViewResult" value="result" />
+			Result
+		</label>
+		<a href="#" id="aReset">Reset</a>
+		<a href="#" id="aExport">Export</a>
+	</nav>
+
+	<div role="input">
+		<section class="sectInput" role="Data">
+			<pre name="preData" id="preData"></pre>
+			<label>JavaScript</label>
+		</section>
+		<section class="sectInput" role="Structure">
+			<pre name="preStructure" id="preStructure"></pre>
+			<label>HTML</label>
+		</section>
+		<section class="sectInput" role="Style">
+			<pre name="preStyle" id="preStyle"></pre>
+			<label>CSS</label>
+		</section>
+	</div>
+
+	<div role="output">
+		<iframe id="ifrOutput"></iframe>
+	</div>
+</div>
+
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/ace.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/theme-solarized_light.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/mode-javascript.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/mode-html.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.2/mode-css.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/side.js"></script>
+	<script defer src="js/javascript.js"></script> -->
+	<!-- <script defer src="js/analytics.js"></script> -->
+	<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+	<![endif]-->
+</div>
+</body>
