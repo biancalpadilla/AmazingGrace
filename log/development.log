@@ -41492,3 +41492,1075 @@ Processing by LessonsController#main as HTML
   Rendered lessons/main.html.erb within layouts/application (0.3ms)
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 223ms (Views: 222.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 19:42:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  Rendered questions/index.html.erb within layouts/application (84.6ms)
+Completed 200 OK in 754ms (Views: 698.8ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=asdf&commit=Search" for ::1 at 2015-11-16 19:43:22 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asdf", "commit"=>"Search"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (1.7ms)[0m  [1mSELECT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%asdf%' or description like '%asdf%' or tags.name LIKE '%asdf%' )  ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 231ms (Views: 226.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=javascript&commit=Search" for ::1 at 2015-11-16 20:00:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"javascript", "commit"=>"Search"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (5.7ms)[0m  [1mSELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%javascript%' or description like '%javascript%' or tags.name LIKE '%javascript%' )  ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (1.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  Rendered questions/index.html.erb within layouts/application (122.4ms)
+Completed 200 OK in 841ms (Views: 796.4ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 20:00:14 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 200ms (Views: 198.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:00:16 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  Rendered questions/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 259ms (Views: 253.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-11-16 20:00:18 -0500
+Processing by QuestionsController#new as HTML
+  Rendered questions/new.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 234ms (Views: 233.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/questions" for ::1 at 2015-11-16 20:00:28 -0500
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PDk+bqywNwlTb2Kioprw5Dr0sx0s6qwVzibelcHVVhnLHwKbyh72WFkS0FvaWwfJ5/WaLqSXlzCKQNKVXdQR2w==", "question"=>{"title"=>"bianca", "description"=>"al;dkfjakldjsfl", "tag_list"=>"adfk dkfjkdfj"}, "button"=>""}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "adfk dkfjkdfj"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "adfk dkfjkdfj"], ["created_at", "2015-11-17 01:00:28.092600"], ["updated_at", "2015-11-17 01:00:28.092600"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "questions" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "bianca"], ["description", "al;dkfjakldjsfl"], ["user_id", 1], ["created_at", "2015-11-17 01:00:28.112977"], ["updated_at", "2015-11-17 01:00:28.112977"]]
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 3], ["question_id", 4], ["created_at", "2015-11-17 01:00:28.117887"], ["updated_at", "2015-11-17 01:00:28.117887"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/4
+Completed 302 Found in 42ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/questions/4" for ::1 at 2015-11-16 20:00:28 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mAnswer Load (0.8ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 4]]
+  Rendered questions/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 265ms (Views: 258.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/questions" for ::1 at 2015-11-16 20:00:30 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  Rendered questions/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 223ms (Views: 219.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=bianca&commit=Search" for ::1 at 2015-11-16 20:00:41 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bianca", "commit"=>"Search"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (2.4ms)[0m  [1mSELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%bianca%' or description like '%bianca%' or tags.name LIKE '%bianca%' )  ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  Rendered questions/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 262ms (Views: 256.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 20:00:45 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 214ms (Views: 212.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:00:47 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  Rendered questions/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 279ms (Views: 273.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/questions/new" for ::1 at 2015-11-16 20:00:48 -0500
+Processing by QuestionsController#new as HTML
+  Rendered questions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 236ms (Views: 235.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/questions" for ::1 at 2015-11-16 20:01:00 -0500
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZAbeKrDV2OBFsLFWVkPtAQd8HmSyRNl4naCdxn9XqRmTIOLf1nsZsU/NA68ughos2n03Vzo54l3ZxpHG41bu2w==", "question"=>{"title"=>"bianc padilla", "description"=>"kldjflakjsdf", "tag_list"=>"bianca, was, here"}, "button"=>""}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "bianca"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "bianca"], ["created_at", "2015-11-17 01:01:00.691666"], ["updated_at", "2015-11-17 01:01:00.691666"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "was"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "was"], ["created_at", "2015-11-17 01:01:00.695867"], ["updated_at", "2015-11-17 01:01:00.695867"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "here"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "here"], ["created_at", "2015-11-17 01:01:00.699852"], ["updated_at", "2015-11-17 01:01:00.699852"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "questions" ("title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "bianc padilla"], ["description", "kldjflakjsdf"], ["user_id", 1], ["created_at", "2015-11-17 01:01:00.707030"], ["updated_at", "2015-11-17 01:01:00.707030"]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 4], ["question_id", 5], ["created_at", "2015-11-17 01:01:00.709707"], ["updated_at", "2015-11-17 01:01:00.709707"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("tag_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["tag_id", 5], ["question_id", 5], ["created_at", "2015-11-17 01:01:00.711783"], ["updated_at", "2015-11-17 01:01:00.711783"]]
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "question_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["tag_id", 6], ["question_id", 5], ["created_at", "2015-11-17 01:01:00.713662"], ["updated_at", "2015-11-17 01:01:00.713662"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/questions/5
+Completed 302 Found in 36ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/questions/5" for ::1 at 2015-11-16 20:01:00 -0500
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT  "questions".* FROM "questions" WHERE "questions"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 260ms (Views: 257.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions" for ::1 at 2015-11-16 20:01:02 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 242ms (Views: 237.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=bianc+padilla&commit=Search" for ::1 at 2015-11-16 20:01:06 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bianc padilla", "commit"=>"Search"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (2.6ms)[0m  [1mSELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%bianc padilla%' or description like '%bianc padilla%' or tags.name LIKE '%bianc padilla%' )  ORDER BY created_at[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 222ms (Views: 217.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2015-11-16 20:01:16 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 205ms (Views: 204.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:01:17 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 265ms (Views: 259.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:01:27 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 296ms (Views: 267.1ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:01:28 -0500
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=bianc&commit=Search" for ::1 at 2015-11-16 20:01:30 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bianc", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%bianc%' or description like '%bianc%' or tags.name LIKE '%bianc%' )  ORDER BY created_at
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 220ms (Views: 217.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=bianc&commit=Search" for ::1 at 2015-11-16 20:01:53 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"bianc", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.1ms)[0m  SELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%bianc%' or description like '%bianc%' or tags.name LIKE '%bianc%' )  ORDER BY created_at ASC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (51.4ms)
+Completed 200 OK in 272ms (Views: 256.0ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:01:54 -0500
+
+
+Started GET "/" for ::1 at 2015-11-16 20:01:57 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 221ms (Views: 219.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:01:59 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 267ms (Views: 262.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:02:19 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 295ms (Views: 269.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:02:20 -0500
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:02:33 -0500
+Processing by QuestionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions"  ORDER BY created_at ASC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (56.8ms)
+Completed 200 OK in 285ms (Views: 257.7ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:02:33 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:02:34 -0500
+
+
+Started GET "/" for ::1 at 2015-11-16 20:02:39 -0500
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 223ms (Views: 221.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:02:41 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY created_at ASC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  Rendered questions/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 299ms (Views: 294.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-16 20:02:49 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (53.6ms)
+Completed 200 OK in 285ms (Views: 255.5ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:02:49 -0500
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=asd&commit=Search" for ::1 at 2015-11-16 20:03:09 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asd", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.3ms)[0m  SELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%asd%' or description like '%asd%' or tags.name LIKE '%asd%' )  ORDER BY created_at ASC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  Rendered questions/index.html.erb within layouts/application (55.3ms)
+Completed 200 OK in 324ms (Views: 303.5ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=asd&commit=Search" for ::1 at 2015-11-16 20:03:18 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"asd", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.3ms)[0m  SELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%asd%' or description like '%asd%' or tags.name LIKE '%asd%' )  ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (62.1ms)
+Completed 200 OK in 317ms (Views: 298.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/checklist.self-4f0d8ac367b0efe5985b394faa9f55834dac155088d2be41a2e40fe24844bf39.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/material.min.self-96cc38d167c4874cb8cbd210e935b3f6deecd26d471e80c7ccb7e5ae26425487.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/material-fullpalette.min.self-03f978c7080ab405a201cbe55652310c1197c78bf3d2a97b5dedfdcf17b8d128.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/dragndrop.self-0f2e0595d54031d3013dc210f0818fbbd65a83c601da7d3f6b671dc53ee9448a.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/flag-icon.min.self-8c1f119fb98bbbcb2a4aab5b8c201be11c9799cbe6908730481e18b9adcc80ee.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/questions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/quizstyles.self-9383a7d4a09d3d098801696d5b2cb92b49af2b82d99e7cf6f1aa736d5ef9e5aa.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/ripples.min.self-7f8e263578ca058d756a36ad1e8894df12d7a7a8abd936f86674d328f4bb9839.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/roboto.min.self-51ce5f14f02e3c49043ea413368f2a2fab2d891e2bfcc8168917125df93cd2d8.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/style.self-491236ac84c26581d89b6710fd66e2a356c237e2bd1dfba0ed168874a53ffb49.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/stylesheet.self-dcc0d7dda78659134a2428d926be664094caed8f1c451b660bcb2079268da924.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/tiles.self-5ab296b0f1db50f8204e524a8034456f5869684e1c9fde5178241a17ba42dc38.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/video.self-c28c6b9a649a54cf654c441301f484f024ba81f6a0b0645f08fe07f0a088060b.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/application.self-2d76a9396abf00f1f5826586232fb091d9496916a424a9ff32e063169ad94fed.css?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/jquery.self-d79fb84d36ab15d248e3a22d1a9168c7b526d67e27b9df515f2b1906bbb01089.js?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-16 20:03:18 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/ace.self-229be9e8cc5dbadca7e37805fdf6fe4cc25406462956b7c6ec62bfcb548747df.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/checklist.self-a114d19683550ebd0a7f4bddf86d94429041d70c7ead7fb7306fab6112a9535c.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/dragndrop.self-03ea5d7299de060f81eb3865059a7f662ffb6b24d5806d06857d45f4941d4e90.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/external.self-a04b6c2417c4b6e612205ab30fa212b2c2cb846c3ae1399cada7ff6b27d99342.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/init.self-299fc933b38b8e51b6acf17abbbacc7810e8c78e93f1f300fba66e4a25f4955f.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/javascript.self-324857ce8b8ea5bf7a3c962fb451e8795dc03729e1b628d4164e12c8e4945e1e.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/jquery-ui.min.self-da042190fd2c6afb49fa4e0a1581f1a2ad3431cd22093fd906af1cd1a13849ac.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/jquery.quiz.self-62818b568179579225612fe2480a76f455063eb6e19766505e1839604d896282.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/material.min.self-316246396cd395e4aa94c834668efeadee696ad2a32a430124df182aa5a69aff.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/mode-css.self-dec11b44453fc4e2e744f549651eda0dc43f17995b74d4475d6d19fe7ec89d91.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/mode-html.self-ad29ac85ce45d00b8de354e824abd2450a845286085078bb5092b77e9f86662c.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/mode-javascript.self-f89291f5a0af4920a29e402b46badddfdf6cd611d3901f7053c2370cbb550249.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/plugins.self-4686cf8ae4f511ffb8e190f1ab4a170ed0fd1f3717ea2dd97fb58706c10d5505.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/ripples.min.self-013cb869e894c4b737da10d1aac26a3c6bc69c228eb74dea15d9fc80812259d4.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/theme-solarized_light.self-6f650a31aafa1dc8db7f17db19d426e2169e2136c1ccfcb6c28fd9e452227f0a.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/tiles.self-213a257bf4b8542e1afdcd16c0b7373cbd2e8e2994c712677e0382485c0ba05c.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-16 20:03:19 -0500
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=&commit=Search" for ::1 at 2015-11-16 20:03:23 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (1.7ms)[0m  SELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title like '%%' or description like '%%' or tags.name LIKE '%%' )  ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 226ms (Views: 221.3ms | ActiveRecord: 3.8ms)
