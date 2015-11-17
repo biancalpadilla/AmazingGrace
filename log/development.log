@@ -41997,3 +41997,52 @@ Processing by LessonsController#main as HTML
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
 Completed 200 OK in 223ms (Views: 222.4ms | ActiveRecord: 0.3ms)
 >>>>>>> 740d51c9c17c1d05212663ee92d6a452469a08cb
+
+
+Started GET "/" for ::1 at 2015-11-17 10:52:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LessonsController#main as HTML
+  Rendered lessons/main.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 2434ms (Views: 2411.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/forum" for ::1 at 2015-11-17 10:52:07 -0500
+Processing by QuestionsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (2.3ms)[0m  SELECT "questions".* FROM "questions"  ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (1.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 1]]
+  Rendered questions/index.html.erb within layouts/application (97.2ms)
+Completed 200 OK in 314ms (Views: 289.4ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/forum?utf8=%E2%9C%93&search=CSS&commit=Search" for ::1 at 2015-11-17 10:52:11 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>"CSS", "commit"=>"Search"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mQuestion Load (2.0ms)[0m  SELECT DISTINCT "questions".* FROM "questions" INNER JOIN "taggings" ON "taggings"."question_id" = "questions"."id" INNER JOIN "tags" ON "tags"."id" = "taggings"."tag_id" WHERE (title ilike '%CSS%' or description ilike '%CSS%' or tags.name ilike '%CSS%' )  ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1  [["question_id", 2]]
+  Rendered questions/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 231ms (Views: 226.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/tags/ruby" for ::1 at 2015-11-17 10:52:15 -0500
+Processing by QuestionsController#index as HTML
+  Parameters: {"tag"=>"ruby"}
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = $1 LIMIT 1[0m  [["name", "ruby"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mQuestion Load (0.7ms)[0m  [1mSELECT "questions".* FROM "questions" INNER JOIN "taggings" ON "questions"."id" = "taggings"."question_id" WHERE "taggings"."tag_id" = $1[0m  [["tag_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."question_id" = $1[0m  [["question_id", 3]]
+  Rendered questions/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 254ms (Views: 245.6ms | ActiveRecord: 2.2ms)

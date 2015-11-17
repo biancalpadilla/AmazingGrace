@@ -9,10 +9,13 @@ class QuestionsController < ApplicationController
   #   end
   # end
 
-  def index
+   def index
     @questions = Question.all
     if params[:search]
       @questions = Question.joins(:tags).search(params[:search]).order("created_at DESC").uniq
+    elsif params[:tag]
+      @questions = Question.tagged_with(params[:tag])
+      @user = current_user
     else
       @questions = Question.order('created_at DESC')
       @user = current_user
