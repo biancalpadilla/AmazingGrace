@@ -12,10 +12,9 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     if params[:search]
-      @questions = Question.joins(:tags).search(params[:search]).order("created_at DESC")
+      @questions = Question.joins(:tags).search(params[:search]).order("created_at DESC").uniq
     else
-      @questions = Question.all.order('created_at DESC')
-      @questions = Question.all
+      @questions = Question.order('created_at DESC')
       @user = current_user
     end
   end
@@ -57,7 +56,7 @@ class QuestionsController < ApplicationController
   def update
     @question = Question.find(params[:id])
       if @question.update(question_params)
-        redirect_to question_path(@question.id), notice:"your answer #{@question.description} was sucessfully updated"
+        redirect_to question_path(@question.id), notice:"Your answer #{@question.description} was sucessfully updated"
       else
          redirect_to "/answers/show"
       end
