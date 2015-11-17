@@ -1,24 +1,3 @@
-<!--
-<%= form_for @question do |f| %>
-<p>
-  <%= f.label  :title %>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-</p>
-<p>
-  <%= f.label :tag_list, "Tags (separated by commas)" %>
-  <%= f.text_field :tag_list %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
-<% end %>
-
-<%= link_to "", questions_path, class: 'mdi-hardware-keyboard-arrow-left' %> -->
-
 <% if @errors %>
 <div class="panel panel-danger question-save">
     <div class="panel-heading">
