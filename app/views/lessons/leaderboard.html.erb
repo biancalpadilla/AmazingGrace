@@ -16,7 +16,7 @@
         <% @users.each_with_index do |user, index| %>
         <tr>
           <td><%= index + 1 %></td>
-          <td><%= image_tag avatar_url(user, 35), class: "avatargravatar" %>&nbsp;&nbsp;&nbsp;<%= user.name.capitalize %></td>
+          <td><%= image_tag avatar_url(user, 35), class: "avatargravatar" %>&nbsp;&nbsp;&nbsp;<%= user.name.split.map(&:capitalize).join(' ') %></td>
           <td><%= user.score %></td>
         </tr>
         <% end %>
