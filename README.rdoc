@@ -2,8 +2,6 @@
 
 AMAZING GRACE
 
-Wyncode Final Projects
-
 
 
 
@@ -22,9 +20,9 @@ FEATURES:
   - User Profiles
   - Avatars
 + Lessons
-  - Create a website using HTML and CSS
   - Build your own Computer using Raspberry Pi
-  - History of Women in CS
+  - Create a website using HTML and CSS
+  - Build a Twitter Moniter using Raspberry Pi
 + Lesson Types:
   - Video 
   - To-Do Checklist 
